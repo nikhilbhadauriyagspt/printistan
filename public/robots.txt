@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://axelprinting.shop/sitemap.xml
+Sitemap: https://larryprintingsolutions.shop/sitemap.xml

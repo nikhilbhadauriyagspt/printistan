@@ -54,39 +54,38 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white text-slate-900 pt-12 pb-8 font-jakarta border-t border-slate-100">
-      <div className="w-full px-4 md:px-6 lg:px-10">
+    <footer className="bg-slate-900 text-white pt-12 pb-8 font-jakarta">
+      <div className="w-full px-4 md:px-10">
         
-        {/* --- COMPACT TOP SECTION --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10 pb-10 border-b border-slate-50">
+        {/* --- TOP SECTION --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10 pb-10 border-b border-white/10">
           <div className="lg:col-span-4 space-y-4">
-            <Link to="/" className="inline-block transition-transform hover:scale-105 duration-300">
-              <img src="/logo/logo.png" alt="Axel Printing" className="h-15 w-auto object-contain" />
+            <Link to="/" className="inline-block">
+              <img src="/logo/logo.png" alt="Larry Printing Solutions" className="h-13 w-auto object-contain brightness-0 invert" />
             </Link>
-            <p className="text-slate-500 text-sm font-medium leading-relaxed max-w-sm">
-              We provide reliable printers and essential supplies for your daily needs. 
-              Our focus is on delivering quality products and friendly support 
-              directly to your doorstep, making your experience simple and easy.
+            <p className="text-gray-400 text-sm font-medium leading-relaxed max-w-sm">
+              Reliable printers and essential supplies for your daily needs. 
+              Quality printer and expert support directly to your doorstep.
             </p>
           </div>
 
           <div className="lg:col-span-8 flex flex-col md:flex-row items-center justify-end gap-6 md:gap-12">
             <div className="space-y-1 text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-2">
-                <Sparkles size={14} className="text-blue-600" />
-                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-tight">Stay Updated</h3>
+                <Sparkles size={14} className="text-cyan-400" />
+                <h3 className="text-sm font-bold">Stay updated</h3>
               </div>
-              <p className="text-xs text-slate-500 font-medium">Join our community for the latest news.</p>
+              <p className="text-xs text-gray-400 font-medium">Join our community for the latest news.</p>
             </div>
             <form onSubmit={handleSubscribe} className="flex items-center gap-2 w-full md:w-auto">
               <input
                 required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 md:w-60 bg-slate-50 border border-slate-100 rounded-full px-5 py-3 text-xs outline-none focus:border-blue-600 transition-all"
+                className="flex-1 md:w-60 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-xs outline-none focus:border-cyan-500 transition-all text-white"
               />
               <button
                 disabled={loading}
-                className="h-10 w-10 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all shadow-lg shadow-slate-900/10 shrink-0"
+                className="h-10 w-10 bg-cyan-500 text-slate-900 rounded-lg flex items-center justify-center hover:bg-white transition-all shrink-0"
               >
                 {loading ? <Loader2 className="animate-spin" size={16} /> : <MoveRight size={18} />}
               </button>
@@ -98,26 +97,25 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           
           <div className="space-y-4">
-            <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em]">Address</h4>
+            <h4 className="text-xs font-bold text-cyan-400">Address</h4>
             <div className="space-y-3">
-              <div className="flex items-start gap-3 group">
-                <MapPin size={14} className="text-blue-600 shrink-0 mt-0.5" />
-                <p className="text-[13px] font-medium text-slate-600 leading-relaxed">2404 Irving Blvd, Dallas, TX 75207, United States</p>
+              <div className="flex items-start gap-3">
+                <MapPin size={14} className="text-cyan-400 shrink-0 mt-0.5" />
+                <p className="text-[13px] font-medium text-gray-400 leading-relaxed">3106 E Camelback Rd, Phoenix, AZ 85016, USA</p>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={14} className="text-blue-600 shrink-0" />
-                <p className="text-[13px] font-medium text-slate-600">info@axelprinting.shop</p>
+                <Mail size={14} className="text-cyan-400 shrink-0" />
+                <p className="text-[13px] font-medium text-gray-400">info@larryprintingsolutions.shop</p>
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em]">Printer</h4>
+            <h4 className="text-xs font-bold text-cyan-400">Printers</h4>
             <ul className="space-y-2">
               {categories.map(cat => (
                 <li key={cat.id}>
-                  <Link to={`/shop?category=${cat.slug}`} className="text-slate-500 hover:text-blue-600 transition-all text-[13px] font-medium flex items-center gap-2 group">
-                    <div className="h-px w-0 bg-blue-600 group-hover:w-2 transition-all" />
+                  <Link to={`/shop?category=${cat.slug}`} className="text-gray-400 hover:text-cyan-400 transition-all text-[13px] font-medium">
                     {cat.name}
                   </Link>
                 </li>
@@ -126,17 +124,16 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em]">Company</h4>
+            <h4 className="text-xs font-bold text-cyan-400">Company</h4>
             <ul className="space-y-2">
               {[
-                { name: 'About Us', path: '/about' },
-                { name: 'Contact Us', path: '/contact' },
+                { name: 'About us', path: '/about' },
+                { name: 'Contact us', path: '/contact' },
                 { name: 'FAQs', path: '/faq' },
-                { name: 'Track Orders', path: '/orders' }
+                { name: 'Track order', path: '/orders' }
               ].map(item => (
                 <li key={item.name}>
-                  <Link to={item.path} className="text-slate-500 hover:text-blue-600 transition-all text-[13px] font-medium flex items-center gap-2 group">
-                    <div className="h-px w-0 bg-blue-600 group-hover:w-2 transition-all" />
+                  <Link to={item.path} className="text-gray-400 hover:text-cyan-400 transition-all text-[13px] font-medium">
                     {item.name}
                   </Link>
                 </li>
@@ -145,18 +142,17 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em]">Legal</h4>
-            <ul className="grid grid-cols-1 gap-2">
+            <h4 className="text-xs font-bold text-cyan-400">Legal</h4>
+            <ul className="space-y-2">
               {[
-                { name: 'Privacy Policy', path: '/privacy-policy' },
-                { name: 'Terms & Conditions', path: '/terms-and-conditions' },
-                { name: 'Return Policy', path: '/return-policy' },
-                { name: 'Shipping Policy', path: '/shipping-policy' },
-                { name: 'Cookie Policy', path: '/cookie-policy' }
+                { name: 'Privacy policy', path: '/privacy-policy' },
+                { name: 'Terms & conditions', path: '/terms-and-conditions' },
+                { name: 'Return policy', path: '/return-policy' },
+                { name: 'Shipping policy', path: '/shipping-policy' },
+                { name: 'Cookie policy', path: '/cookie-policy' }
               ].map(item => (
                 <li key={item.name}>
-                  <Link to={item.path} className="text-slate-500 hover:text-blue-600 transition-all text-[13px] font-medium flex items-center gap-2 group">
-                    <div className="h-px w-0 bg-blue-600 group-hover:w-2 transition-all" />
+                  <Link to={item.path} className="text-gray-400 hover:text-cyan-400 transition-all text-[13px] font-medium">
                     {item.name}
                   </Link>
                 </li>
@@ -164,21 +160,20 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-{/* --- FOOTER BOTTOM --- */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-[13px] text-blue-700 font-medium">
-            © 2026 Axel Printing. <span className="text-blue-700 ml-2">All Rights Reserved.</span>
+
+        {/* --- FOOTER BOTTOM --- */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/10">
+          <p className="text-xs text-white-500 font-medium">
+            © 2026 Larry Printing Solutions. All rights reserved.
           </p>
           
-          <div className="flex items-center gap-8 ">
-             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-6" />
-          </div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-6  transition-all" />
         </div>
 
         {/* --- DISCLAIMER --- */}
-        <div className=" text-center ">
-          <p className="text-blue-700 opacity-70 text-[12px] font-black uppercase ">
-            Disclaimer - For Informational only. No software installation or distribution.
+        <div className="mt-8 text-center">
+          <p className="text-white-500 text-[15px] font-medium">
+            Disclaimer: For informational purposes only. No software installation or distribution.
           </p>
         </div>
       </div>

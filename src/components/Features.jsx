@@ -1,62 +1,48 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Truck, ShieldCheck, Headphones, Shield, Printer } from 'lucide-react';
+import { Truck, ShieldCheck, Headphones, Printer } from 'lucide-react';
 
 const features = [
   {
-    icon: <Truck className="text-blue-600" size={24} />,
-    title: "Express Printer Shipping",
-    desc: "Direct to your creative workspace",
-    delay: 0.1
+    icon: <Truck className="text-cyan-600" size={32} strokeWidth={1.5} />,
+    title: "Fast Shipping",
+    desc: "On all printer orders"
   },
   {
-    icon: <ShieldCheck className="text-blue-600" size={24} />,
-    title: "Elite Satisfaction",
-    desc: "Quality 30-day trial period",
-    delay: 0.2
+    icon: <ShieldCheck className="text-cyan-600" size={32} strokeWidth={1.5} />,
+    title: "30-Day Returns",
+    desc: "Hassle-free guarantee"
   },
   {
-    icon: <Headphones className="text-blue-600" size={24} />,
-    title: "Expert Concierge",
-    desc: "Specialized expert printer support",
-    delay: 0.3
+    icon: <Headphones className="text-cyan-600" size={32} strokeWidth={1.5} />,
+    title: "24/7 Support",
+    desc: "Expert help anytime"
   },
- {
-  icon: <Printer className="text-blue-600" size={24} />,
-  title: "High Quality Printing",
-  desc: "Crisp and reliable print performance",
-  delay: 0.4
-}
+  {
+    icon: <Printer className="text-cyan-600" size={32} strokeWidth={1.5} />,
+    title: "Quality Prints",
+    desc: "Crisp and clear output"
+  }
 ];
 
 export default function Features() {
   return (
-    <section className="w-full bg-white py-12 border-b border-slate-50">
-      <div className="w-full px-4 md:px-6 lg:px-10">
+    <section className="w-full bg-white py-12 border-b border-gray-100">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: item.delay }}
-              className="flex items-center gap-5 group"
-            >
-              <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
-                <div className="group-hover:text-white transition-colors duration-300">
-                  {item.icon}
-                </div>
+            <div key={index} className="flex items-center gap-4 py-4 sm:py-0 justify-center group">
+              <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                {item.icon}
               </div>
-              <div className="space-y-1">
-                <h3 className="text-[15px] font-bold text-slate-900 leading-tight ">
+              <div>
+                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 text-[13px] font-medium leading-tight">
+                <p className="text-gray-500 text-xs font-medium mt-0.5">
                   {item.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

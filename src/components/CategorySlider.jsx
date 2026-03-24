@@ -1,19 +1,16 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight, ShoppingBag, Eye, Heart } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart, ShoppingBag } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import { useState } from "react";
 import { cn } from "../lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 export default function CategorySlider({ title, products = [] }) {
   const { addToCart, toggleWishlist, isInWishlist, openCartDrawer } = useCart();
-  const [hoveredId, setHoveredId] = useState(null);
 
   const handleAddToCart = (e, product) => {
     e.preventDefault();
@@ -31,115 +28,85 @@ export default function CategorySlider({ title, products = [] }) {
   };
 
   return (
-    <section className="bg-white py-12 md:py-16 w-full font-jakarta overflow-hidden">
-      <div className="w-full px-4 md:px-6 lg:px-10">
+    <section className="bg-white py-12 w-full border-b border-gray-100">
+      <div className="w-full px-4 md:px-10">
         
         {/* --- HEADER --- */}
-        <div className="flex items-end justify-between mb-10">
-          <div className="space-y-2">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
-              {title.split(' ')[0]} <span className="text-blue-600">{title.split(' ')[1]}</span>
+        <div className="flex items-center justify-between mb-10">
+          <div>
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight uppercase">
+              {title.split(' ')[0]} <span className="text-cyan-600">{title.split(' ')[1] || ''}</span>
             </h2>
-            <p className="text-slate-500 text-sm font-medium">Premium printer for professional output</p>
+            <div className="h-1 w-12 bg-cyan-500 mt-1" />
           </div>
           
           <div className="flex gap-2">
-            <button className="cs-prev h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 hover:bg-slate-900 hover:text-white transition-all duration-300 disabled:opacity-20 shadow-sm">
-              <ChevronLeft size={18} />
+            <button className="cs-prev h-10 w-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-cyan-500 hover:text-white transition-all disabled:opacity-20 shadow-sm group">
+              <ChevronLeft size={20} />
             </button>
-            <button className="cs-next h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 hover:bg-slate-900 hover:text-white transition-all duration-300 disabled:opacity-20 shadow-sm">
-              <ChevronRight size={18} />
+            <button className="cs-next h-10 w-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-cyan-500 hover:text-white transition-all disabled:opacity-20 shadow-sm group">
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>
 
-        {/* --- LANDSCAPE CARDS CAROUSEL --- */}
-        <div className="relative group/carousel">
+        {/* --- CAROUSEL --- */}
+        <div className="relative">
           <Swiper
             modules={[Navigation]}
             spaceBetween={16}
             slidesPerView={1.2}
-            navigation={{
-              prevEl: '.cs-prev',
-              nextEl: '.cs-next',
-            }}
+            navigation={{ prevEl: '.cs-prev', nextEl: '.cs-next' }}
             breakpoints={{
-              640: { slidesPerView: 2.2 },
-              1024: { slidesPerView: 3.2 },
-              1280: { slidesPerView: 4.2 },
+              480: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+              1280: { slidesPerView: 5 },
+              1536: { slidesPerView: 6 },
             }}
-            className="!overflow-visible"
           >
             {products.slice(0, 10).map((p) => (
               <SwiperSlide key={p.id}>
-                <div 
-                  className="group relative flex flex-col h-full bg-white transition-all duration-500"
-                  onMouseEnter={() => setHoveredId(p.id)}
-                  onMouseLeave={() => setHoveredId(null)}
-                >
-                  {/* Landscape Image Card */}
-                  <div className="relative aspect-[16/10] w-full bg-slate-50 overflow-hidden border border-slate-100 group-hover:border-blue-100 transition-all duration-500">
+                <div className="bg-white border border-gray-100 rounded-xl p-4 flex flex-col h-full hover:border-cyan-500 transition-all duration-300 group">
+                  {/* Image Section */}
+                  <div className="relative aspect-square w-full mb-4 flex items-center justify-center overflow-hidden bg-gray-50 rounded-lg">
                     <Link to={`/product/${p.slug}`} className="absolute inset-0 z-10" />
-                    
                     <img 
                       src={getImagePath(p.images)} 
                       alt={p.name} 
-                      className="w-full h-full object-contain p-8 mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
+                      className="max-h-[85%] max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-110"
                       onError={(e) => { e.target.src = "https://via.placeholder.com/400x400?text=" + p.name; }}
                     />
-
-                    {/* Hover Actions Overlay */}
-                    <AnimatePresence>
-                      {hoveredId === p.id && (
-                        <motion.div 
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          className="absolute inset-0 bg-black/5 z-20 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-[2px]"
-                        >
-                          <button 
-                            onClick={(e) => handleAddToCart(e, p)}
-                            className="w-3/4 h-11 bg-blue-600 text-white rounded-full flex items-center justify-center gap-2 shadow-lg hover:bg-blue-700 active:scale-95 transition-all text-xs font-bold uppercase tracking-wider"
-                          >
-                            <ShoppingBag size={16} />
-                            Quick Add
-                          </button>
-                          
-                          <div className="flex gap-2 w-3/4">
-                            <button 
-                              onClick={(e) => { e.preventDefault(); toggleWishlist(p); }}
-                              className={cn(
-                                "flex-1 h-11 rounded-full flex items-center justify-center gap-2 border bg-white shadow-md transition-all text-[10px] font-bold uppercase tracking-tight",
-                                isInWishlist(p.id) ? "text-red-500 border-red-100" : "text-slate-600 hover:text-blue-600 border-slate-100"
-                              )}
-                            >
-                              <Heart size={14} fill={isInWishlist(p.id) ? "currentColor" : "none"} />
-                              Wishlist
-                            </button>
-                            <Link 
-                              to={`/product/${p.slug}`}
-                              className="flex-1 h-11 rounded-full bg-slate-900 text-white flex items-center justify-center gap-2 shadow-md hover:bg-slate-800 transition-all text-[10px] font-bold uppercase tracking-tight"
-                            >
-                              <Eye size={14} />
-                              View
-                            </Link>
-                          </div>
-                        </motion.div>
+                    
+                    {/* Minimal Wishlist Button */}
+                    <button 
+                      onClick={(e) => { e.preventDefault(); toggleWishlist(p); }}
+                      className={cn(
+                        "absolute top-2 right-2 z-20 p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm transition-colors hover:bg-white",
+                        isInWishlist(p.id) ? "text-red-500" : "text-gray-400 hover:text-cyan-600"
                       )}
-                    </AnimatePresence>
+                    >
+                      <Heart size={16} fill={isInWishlist(p.id) ? "currentColor" : "none"} />
+                    </button>
                   </div>
 
-                  {/* Details */}
-                  <div className="pt-4 px-1 flex justify-between items-start">
-                    <div className="space-y-1 max-w-[70%]">
-                      <Link to={`/product/${p.slug}`} className="block">
-                        <h3 className="text-[14px] font-bold text-slate-800 line-clamp-1 group-hover:text-blue-600 transition-colors uppercase tracking-tight">
-                          {p.name}
-                        </h3>
-                      </Link>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-lg font-black text-slate-900 leading-none">${p.price}</span>
+                  {/* Details Section */}
+                  <div className="flex-1 flex flex-col">
+                    <Link to={`/product/${p.slug}`}>
+                      <h3 className="text-[12px] font-bold text-slate-800 group-hover:text-cyan-600 transition-colors uppercase tracking-tight line-clamp-2 mb-2">
+                        {p.name}
+                      </h3>
+                    </Link>
+                    
+                    <div className="mt-auto pt-3 border-t border-gray-50 flex flex-col gap-3">
+                      <span className="text-lg font-black text-slate-900">${p.price}</span>
+                      
+                      <button 
+                        onClick={(e) => handleAddToCart(e, p)}
+                        className="w-full py-2 bg-cyan-500 text-slate-900 text-[10px] font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all rounded shadow-sm"
+                      >
+                        Add to Cart
+                      </button>
                     </div>
                   </div>
                 </div>

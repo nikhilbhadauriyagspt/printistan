@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
+import TopShowcase from "@/components/TopShowcase";
 import SEO from "@/components/SEO";
-import Features from "@/components/Features";
 import Collections from "@/components/Collections";
 import ShopByCategory from "@/components/ShopByCategory";
 import ProductGrid from "@/components/ProductGrid";
@@ -85,12 +85,12 @@ export default function Home() {
   return (
     <div className="bg-white font-jakarta overflow-x-hidden text-slate-900">
       <SEO 
-        title="Axel Printing | Quality Printers & Printer"
+        title="Larry Printing Solutions | Quality Printers & Printer"
         description="Your trusted source for high-quality printers and printing printer. Delivering excellence across the USA."
       />
 
       <Hero />
-      <Features />
+      <TopShowcase products={data.all} />
 
       <ShopByCategory categories={data.categories} />
       <TripleBanners />
@@ -103,37 +103,41 @@ export default function Home() {
         products={data.printers} 
       />
        
-     {/* --- COMPACT MINIMAL CONTACT CTA --- */}
-      <section className="py-16 bg-white font-jakarta">
-        <div className="max-w-[1000px] mx-auto px-6">
-          <div className="relative rounded-2xl p-8 md:p-12 text-center bg-slate-50 border border-slate-100 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+     {/* --- CLEAN CONTACT CTA --- */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="w-full px-4 md:px-10">
+          <div className="relative rounded-xl p-8 md:p-12 bg-cyan-900 text-white flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden shadow-xl">
             
-            <div className="text-left space-y-2 max-w-md">
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase text-blue-600">
+            <div className="text-left space-y-3 max-w-xl relative z-10">
+              <span className="text-[10px] font-black tracking-[0.3em] uppercase text-cyan-400">
                 Support Excellence
               </span>
-              <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">
-                Need expert guidance?
+              <h2 className="text-3xl md:text-4xl font-bold ">
+                Need expert  guidance?
               </h2>
-              <p className="text-slate-500 text-sm font-medium leading-relaxed">
-                Our friendly team is always here to help you with any questions or advice you need.
+              <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed">
+                Our friendly team is always here to help you find the perfect printing solution for your needs.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto relative z-10">
               <Link
                 to="/contact"
-                className="bg-blue-600 text-white px-8 h-12 flex items-center justify-center rounded-lg font-bold text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-blue-700 shadow-md shadow-blue-600/20 whitespace-nowrap"
+                className="bg-cyan-500 text-slate-900 px-10 h-12 flex items-center justify-center rounded font-bold text-xs uppercase tracking-widest transition-all hover:bg-white hover:text-slate-900 shadow-lg shadow-cyan-500/10 whitespace-nowrap"
               >
                 Contact Us
               </Link>
               <Link
                 to="/faq"
-                className="bg-white border border-slate-200 text-slate-700 px-8 h-12 flex items-center justify-center rounded-lg font-bold text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-slate-50 hover:text-slate-900 whitespace-nowrap"
+                className="bg-transparent border border-white/20 text-white px-10 h-12 flex items-center justify-center rounded font-bold text-xs uppercase tracking-widest transition-all hover:bg-white hover:text-slate-900 whitespace-nowrap"
               >
                 View FAQ
               </Link>
             </div>
+
+            {/* Subtle background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-[80px]" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-[80px]" />
             
           </div>
         </div>

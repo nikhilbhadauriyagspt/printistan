@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
-import { ChevronDown, ArrowRight, MessageCircle, HelpCircle } from 'lucide-react';
+import { ChevronDown, ArrowRight, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../lib/utils';
 
 const faqs = [
   {
-    category: "Orders & Buying",
+    category: "Orders & buying",
     questions: [
       { q: "How do I buy a printer?", a: "It's easy! Just pick the printer you like, add it to your cart, and follow the steps at checkout to pay." },     
       { q: "Do I need an account to shop?", a: "No, you can check out as a guest. But having an account helps you see your order history later." },
-      { q: "Where can I see my order?", a: "We'll send you an email as soon as you buy something. You can also check 'Track Order' at the top of the page." },
+      { q: "Where can I see my order?", a: "We'll send you an email as soon as you buy something. You can also check 'Track order' at the top of the page." },
       { q: "Can I change my mind after buying?", a: "If we haven't sent your printer yet, we can change or cancel your order. Just message us as soon as possible!" },
       { q: "What ways can I pay?", a: "We take all major bank cards and PayPal. Everything is kept safe and private." }
     ]
   },
   {
-    category: "Shipping & Delivery",
+    category: "Shipping & delivery",
     questions: [
       { q: "Where do you deliver?", a: "We deliver to all homes and offices across the country." },
       { q: "How long will it take to get my printer?", a: "Most orders arrive in 3 to 7 days. We'll let you know exactly when it's on its way." },
@@ -27,7 +27,7 @@ const faqs = [
     ]
   },
   {
-    category: "About the Printers",
+    category: "About the printers",
     questions: [
       { q: "Are the printers brand new?", a: "Yes, 100%. We only sell brand new, original printers in their original boxes." },
       { q: "Will I get a warranty?", a: "Yes, all printers come with a full warranty, so you're always protected." },
@@ -37,7 +37,7 @@ const faqs = [
     ]
   },
   {
-    category: "Returns & Refunds",
+    category: "Returns & refunds",
     questions: [
       { q: "Can I return a printer?", a: "Yes, if the printer is still in its box and hasn't been used, you can return it within 14 days." },
       { q: "How do I get my money back?", a: "Once we get the printer back and check it, we'll send your money back to your card within a few days." },
@@ -45,7 +45,7 @@ const faqs = [
     ]
   },
   {
-    category: "Support & Help",
+    category: "Support & help",
     questions: [
       { q: "How can I contact you?", a: "You can send us an email or use the form on our Contact page. We're here to help every day." },
       { q: "When are you open?", a: "Our website is always open! Our team answers messages throughout the day, usually within 24 hours." },
@@ -67,18 +67,18 @@ export default function FAQ() {
   return (
     <div className="bg-white min-h-screen font-jakarta text-slate-900 overflow-x-hidden ">
       <SEO 
-        title="FAQ | Axel Printing" 
+        title="FAQ | Larry Printing Solutions" 
         description="Find simple answers to your questions about printers, delivery, and support."
       />
 
       {/* --- HERO HEADER --- */}
-      <section className="relative pt-12 pb-16 px-4 md:px-6 lg:px-10 border-b border-slate-50">
+      <section className="relative pt-12 pb-16 px-4 md:px-10 bg-gray-50 border-b border-gray-100">
         <div className="max-w-[1200px] mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100">
-            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Help center</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+            <span className="text-xs font-bold text-cyan-600">Help center</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
-            Common <span className="text-blue-600">questions</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
+            Common <span className="text-cyan-600">questions</span>
           </h1>
           <p className="text-base text-slate-500 font-medium max-w-lg mx-auto">
             Find quick answers to common questions about our products, shipping, and more.
@@ -87,23 +87,23 @@ export default function FAQ() {
       </section>
 
       {/* --- MAIN CONTENT --- */}
-      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-10 py-16 md:py-24 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-10 py-16 md:py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* --- CATEGORY NAVIGATION --- */}
           <div className="lg:col-span-4 space-y-8">
             <div className="space-y-4">
-              <h4 className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Categories</h4>
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">Categories</h4>
               <div className="flex flex-col gap-2">
                 {faqs.map((f) => (
                   <button
                     key={f.category}
                     onClick={() => { setActiveCategory(f.category); setActiveIdx(null); }}
                     className={cn(
-                      "w-full text-left px-6 py-4 rounded-xl text-sm font-bold transition-all border",
+                      "w-full text-left px-6 py-4 rounded-lg text-sm font-bold transition-all border",
                       activeCategory === f.category 
-                        ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-600/20" 
-                        : "bg-white text-slate-500 border-slate-100 hover:border-slate-300"
+                        ? "bg-cyan-500 text-slate-900 border-cyan-500 shadow-lg shadow-cyan-500/10" 
+                        : "bg-white text-slate-500 border-gray-100 hover:border-cyan-500"
                     )}
                   >
                     {f.category}
@@ -113,15 +113,15 @@ export default function FAQ() {
             </div>
 
             {/* Quick Contact Box */}
-            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
+            <div className="p-8 rounded-xl bg-gray-50 border border-gray-100 space-y-4">
                <div className="flex items-center gap-3">
-                  <MessageCircle size={18} className="text-blue-600" />
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-900">Need more help?</span>
+                  <MessageCircle size={18} className="text-cyan-600" />
+                  <span className="text-xs font-bold text-slate-900">Need more help?</span>
                </div>
                <p className="text-sm text-slate-500 font-medium leading-relaxed">
                  If you can't find your answer here, our team is always ready to help you directly.
                </p>
-               <Link to="/contact" className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-700">
+               <Link to="/contact" className="inline-flex items-center gap-2 text-xs font-bold text-cyan-600 hover:text-cyan-700">
                  Contact us <ArrowRight size={14} />
                </Link>
             </div>
@@ -142,8 +142,8 @@ export default function FAQ() {
                   <div 
                     key={i}
                     className={cn(
-                      "bg-white rounded-2xl transition-all duration-300 overflow-hidden border border-slate-100",
-                      activeIdx === i ? "shadow-xl shadow-slate-200/40 border-blue-100" : "hover:border-slate-200"
+                      "bg-white rounded-xl transition-all duration-300 overflow-hidden border",
+                      activeIdx === i ? "shadow-xl shadow-slate-200/20 border-cyan-500" : "border-gray-100 hover:border-cyan-500"
                     )}
                   >
                     <button
@@ -157,8 +157,8 @@ export default function FAQ() {
                         {faq.q}
                       </span>
                       <div className={cn(
-                        "h-8 w-8 rounded-full border border-slate-100 flex items-center justify-center transition-all duration-300 shrink-0",
-                        activeIdx === i ? "bg-blue-600 text-white rotate-180" : "bg-slate-50 text-slate-400 group-hover:bg-slate-100"
+                        "h-8 w-8 rounded-full border flex items-center justify-center transition-all duration-300 shrink-0",
+                        activeIdx === i ? "bg-cyan-500 text-slate-900 border-cyan-500 rotate-180" : "bg-gray-50 border-gray-100 text-gray-400 group-hover:bg-cyan-50 group-hover:text-cyan-600 group-hover:border-cyan-100"
                       )}>
                         <ChevronDown size={16} />
                       </div>
@@ -173,7 +173,7 @@ export default function FAQ() {
                           transition={{ duration: 0.3 }}
                         >
                           <div className="px-6 pb-8 pt-2">
-                            <div className="h-px w-full bg-slate-50 mb-6" />
+                            <div className="h-px w-full bg-gray-50 mb-6" />
                             <p className="text-slate-500 text-base font-medium leading-relaxed max-w-2xl">
                               {faq.a}
                             </p>
@@ -191,15 +191,15 @@ export default function FAQ() {
       </div>
 
       {/* --- CTA SECTION --- */}
-      <section className="py-24 text-center bg-white border-t border-slate-50 px-4 md:px-6 lg:px-10">
+      <section className="py-24 text-center bg-white border-t border-gray-100 px-4 md:px-10">
         <div className="max-w-[800px] mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900">
-            Still need <span className="text-blue-600">clarity?</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            Still need <span className="text-cyan-600">clarity?</span>
           </h2>
           <div className="flex justify-center">
             <Link 
               to="/contact" 
-              className="bg-blue-600 text-white px-10 h-14 flex items-center justify-center rounded-xl font-bold text-sm transition-all hover:bg-blue-700 shadow-xl shadow-blue-600/20 active:scale-95"
+              className="bg-slate-900 text-white px-10 h-14 flex items-center justify-center rounded font-bold text-sm transition-all hover:bg-cyan-500 shadow-xl shadow-slate-900/10 active:scale-95"
             >
               Speak with our team <ArrowRight size={18} className="ml-3" />
             </Link>

@@ -1,57 +1,49 @@
-import { MoveRight, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import banner7 from "@/assets/bannerr/banner7.jpg";
+import banner10 from "@/assets/bannerr/banner10.jpg";
 
 export default function Collections() {
   return (
-    <section className="bg-white py-8 md:py-12 font-jakarta overflow-hidden">
-      <div className="w-full px-4 md:px-6 lg:px-10">
+    <section className="bg-white py-12 w-full border-b border-gray-100">
+      <div className="w-full px-4 md:px-10">
         
-        <div className="relative h-auto md:h-[380px] overflow-hidden flex flex-col md:flex-row shadow-lg">
+        <div className="relative h-auto md:h-[400px] overflow-hidden flex flex-col md:flex-row border border-gray-200">
           
           {/* Left Side: Content with solid background */}
-          <div className="w-full md:w-[45%] bg-[#001f3f] p-8 md:p-12 flex flex-col justify-center items-start space-y-5 z-10">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-blue-600/20 border border-blue-400/30">
-                <Sparkles size={10} className="text-blue-400" />
-                <span className="text-[9px] font-black uppercase tracking-widest text-blue-400">Elite Series</span>
+          <div className="w-full md:w-[45%] bg-[#0A0A0B] p-8 md:p-16 flex flex-col justify-center items-start space-y-5 z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                <Sparkles size={12} className="text-cyan-500" />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-cyan-500 text-center">Elite Series 2026</span>
               </div>
 
-              <h2 className="text-2xl md:text-4xl font-black leading-tight text-white ">
-                Premium <span className="text-blue-500">Printing</span> <br /> 
-                Printer
+              <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-white ">
+                Quality <br />
+                <span className="text-cyan-500">Printers</span>
               </h2>
 
-              <p className="text-slate-300 text-[13px] md:text-sm font-medium leading-relaxed max-w-xs">
-                Unlock next-level output with our flagship collection. Engineered for precision and professional durability.
+              <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed max-w-sm">
+                Unlock high-quality output with our flagship collection. Designed for sharp documents and everyday reliability.
               </p>
 
               <div className="pt-2">
                 <Link
                   to="/shop"
-                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 h-10 rounded-lg font-bold text-[10px] uppercase tracking-widest hover:bg-blue-700 transition-all shadow-lg active:scale-95"
+                  className="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-3 rounded font-bold text-xs uppercase tracking-widest hover:bg-cyan-500 hover:text-white transition-all active:scale-95"
                 >
-                  Explore Now <ArrowRight size={14} />
+                  Shop Now <ArrowRight size={16} />
                 </Link>
               </div>
-            </motion.div>
           </div>
 
           {/* Right Side: Image with perfect fit */}
           <div className="w-full md:w-[55%] relative h-[250px] md:h-full bg-slate-100">
             <img
-              src={banner7}
+              src={banner10}
               alt="Flagship Collection"
-              className="w-full h-full object-cover md:object-right transition-transform duration-[10000ms] hover:scale-105"
+              className="w-full h-full object-cover md:object-center"
             />
             {/* Subtle transition between sides */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#001f3f] to-transparent hidden md:block" />
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0A0A0B] to-transparent hidden md:block" />
           </div>
 
         </div>
