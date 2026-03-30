@@ -11,7 +11,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export default function ShopByCategory({ categories = [], loading = false }) {
-  // Flatten and filter categories for a clean printer-focused list
   const filteredCategories = categories.filter(cat => {
     const name = cat.name.toLowerCase();
     const slug = cat.slug.toLowerCase();
@@ -40,69 +39,49 @@ export default function ShopByCategory({ categories = [], loading = false }) {
   };
 
   return (
-    <section className="bg-white py-16 md:py-24 w-full border-b border-slate-100 overflow-hidden">
-      <div className=" mx-auto px-4 md:px-8">
+    <section className="bg-white py-12 md:py-20 w-full overflow-hidden">
+      <div className="w-full px-4 md:px-8">
         
-        {/* --- SECTION HEADER --- */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="h-px w-10 bg-cyan-500" />
-              <span className="text-cyan-600 text-xs md:text-sm font-black uppercase tracking-[0.3em]">
-                Elite Selection
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-none">
-              Shop By <span className="text-slate-400">Category</span>
-            </h2>
-          </div>
-          
-          <div className="flex items-center gap-6">
-            <Link to="/shop" className="hidden md:flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-cyan-600 transition-colors group">
-              View All Inventory <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <div className="flex gap-2">
-              <button className="cat-prev h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 hover:bg-slate-900 hover:text-white transition-all duration-300 disabled:opacity-20 shadow-sm">
-                <ChevronLeft size={22} strokeWidth={1.5} />
-              </button>
-              <button className="cat-next h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 hover:bg-slate-900 hover:text-white transition-all duration-300 disabled:opacity-20 shadow-sm">
-                <ChevronRight size={22} strokeWidth={1.5} />
-              </button>
-            </div>
-          </div>
+        {/* --- CENTERED SECTION HEADER --- */}
+        <div className="flex flex-col items-center text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+            Shop By <span className="text-blue-600">Category</span>
+          </h2>
+          <div className="h-1 w-20 bg-blue-600 mt-4 rounded-full" />
+          <p className="text-slate-500 text-sm font-bold mt-4 max-w-lg">
+            Discover our extensive collection of high-performance printers and professional supplies.
+          </p>
         </div>
 
-        {/* --- PREMIUM CATEGORY SLIDER --- */}
-        <div className="relative">
+        {/* --- SQUARE CATEGORY SLIDER --- */}
+        <div className="relative group">
           <Swiper
             modules={[Navigation, Autoplay]}
-            spaceBetween={24}
+            spaceBetween={20}
             slidesPerView={1.5}
             navigation={{
-              prevEl: '.cat-prev',
-              nextEl: '.cat-next',
+              prevEl: '.cat-prev-sq',
+              nextEl: '.cat-next-sq',
             }}
             autoplay={{
-              delay: 4000,
+              delay: 5000,
               disableOnInteraction: false,
             }}
             breakpoints={{
-              640: { slidesPerView: 2.5 },
-              768: { slidesPerView: 3.5 },
-              1024: { slidesPerView: 4.5 },
-              1280: { slidesPerView: 5.5 },
-              1600: { slidesPerView: 6.5 },
+              480: { slidesPerView: 2.2 },
+              640: { slidesPerView: 3.2 },
+              768: { slidesPerView: 4.2 },
+              1024: { slidesPerView: 5.2 },
+              1280: { slidesPerView: 6.2 },
             }}
             className="!overflow-visible"
           >
             {loading ? (
               Array.from({ length: 8 }).map((_, index) => (
                 <SwiperSlide key={`skeleton-${index}`}>
-                  <div className="flex flex-col gap-6">
-                    <Skeleton className="w-full aspect-[4/5] bg-slate-100/50 rounded-none" />
-                    <div className="space-y-2">
-                      <Skeleton className="h-5 w-3/4 bg-slate-100/50 rounded-none" />
-                    </div>
+                  <div className="flex flex-col gap-4">
+                    <Skeleton className="w-full aspect-square rounded-xl bg-slate-100" />
+                    <Skeleton className="h-4 w-2/3 mx-auto bg-slate-100" />
                   </div>
                 </SwiperSlide>
               ))
@@ -112,45 +91,50 @@ export default function ShopByCategory({ categories = [], loading = false }) {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
+                    transition={{ delay: index * 0.03 }}
                     viewport={{ once: true }}
                   >
                     <Link 
                       to={`/shop?category=${item.slug}`}
-                      className="flex flex-col gap-6 group"
+                      className="flex flex-col gap-4 group/card"
                     >
-                      {/* Modern Card Image */}
-                      <div className="relative w-full aspect-[4/5] bg-slate-50 overflow-hidden shadow-sm group-hover:shadow-2xl group-hover:shadow-slate-200 transition-all duration-500 border border-slate-100">
+                      {/* Square Image Container */}
+                      <div className="relative w-full aspect-square bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 group-hover/card:border-blue-600 group-hover/card:shadow-xl group-hover/card:shadow-blue-100 transition-all duration-500">
                         <img 
                           src={getImagePath(item.image)} 
                           alt={item.name} 
-                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                          className="w-full h-full object-contain p-6 transition-transform duration-700 ease-out group-hover/card:scale-110"
                           onError={(e) => { e.target.src = "https://via.placeholder.com/400x400?text=" + item.name; }}
                         />
                         
                         {/* Interactive Overlay */}
-                        <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors duration-500" />
+                        <div className="absolute inset-0 bg-blue-600/0 group-hover/card:bg-blue-600/5 transition-colors duration-500" />
                         
-                        <div className="absolute bottom-0 left-0 w-full p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-slate-900/80 to-transparent">
-                           <div className="flex items-center gap-2 text-white text-[10px] font-black uppercase tracking-widest">
-                              Shop Now <ArrowRight size={12} />
+                        <div className="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover/card:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-blue-600/90 to-transparent">
+                           <div className="flex items-center justify-center gap-2 text-white text-[10px] font-black uppercase tracking-widest">
+                              View Products <ArrowRight size={12} />
                            </div>
                         </div>
                       </div>
 
-                      {/* Label with Refined Typography */}
-                      <div className="space-y-1">
-                        <h4 className="text-[14px] font-black text-slate-900 group-hover:text-cyan-600 transition-colors uppercase tracking-wider line-clamp-1">
-                          {item.name}
-                        </h4>
-                       
-                      </div>
+                      {/* Name Label */}
+                      <h4 className="text-[13px] font-black text-slate-800 group-hover/card:text-blue-600 transition-colors uppercase tracking-widest text-center leading-tight">
+                        {item.name}
+                      </h4>
                     </Link>
                   </motion.div>
                 </SwiperSlide>
               ))
             )}
           </Swiper>
+
+          {/* Navigation Arrows - Styled for Square Layout */}
+          <button className="cat-prev-sq absolute top-1/2 -left-4 -translate-y-1/2 z-10 h-12 w-12 flex items-center justify-center rounded-full bg-white shadow-xl border border-slate-100 text-slate-900 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0">
+            <ChevronLeft size={24} />
+          </button>
+          <button className="cat-next-sq absolute top-1/2 -right-4 -translate-y-1/2 z-10 h-12 w-12 flex items-center justify-center rounded-full bg-white shadow-xl border border-slate-100 text-slate-900 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0">
+            <ChevronRight size={24} />
+          </button>
         </div>
 
       </div>

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Lock, Eye, EyeOff, Loader2, ArrowRight, ShieldCheck, UserCircle } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, Loader2, ArrowRight } from 'lucide-react';
 import API_BASE_URL from '../config';
 import SEO from '@/components/SEO';
+import { cn } from '../lib/utils';
 
 export default function UserLogin() {
   const [email, setEmail] = useState('');
@@ -28,8 +29,6 @@ export default function UserLogin() {
       password: password
     };
 
-    console.log("LOGIN PAYLOAD:", payload);
-
     try {
       const response = await fetch(`${API_BASE_URL}/login`, {
         method: 'POST',
@@ -41,115 +40,126 @@ export default function UserLogin() {
       });
 
       const data = await response.json();
-      console.log("LOGIN RESPONSE:", data);
 
       if (data.status === 'success') {
-        alert("Login successful!");
         const userData = data.data || data.user || data;
         localStorage.setItem('user', JSON.stringify(userData));
         window.dispatchEvent(new Event('storage'));
         navigate('/profile');
       } else {
-        setError(data.message || 'User not found. Try signing up with a new email.');
+        setError(data.message || 'Authentication failed. Please check your credentials.');
       }
     } catch (err) {
-      console.error("Login connection error:", err);
-      setError('Could not connect to server.');
+      setError('Could not connect to the authentication server.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white font-jakarta px-4 py-12 ">
-      <SEO title="Sign in | My Printer Store" />
+    <div className="bg-white min-h-screen font-jakarta text-slate-900 overflow-x-hidden">
+      <SEO title="Sign In |Inktrix Printers" />
 
-      <div className="w-full max-w-[450px] bg-white rounded-3xl border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden">
-        
-       
-        <div className="p-8 md:p-12">
-            <div className="text-center mb-10">
-               
-                <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Welcome back</h1>
-                <p className="text-gray-500 mt-2 text-sm">Enter your credentials to access your account</p>
-            </div>
+      {/* --- PAGE HEADER --- */}
+      <section className="pt-14 pb-12 bg-white border-b border-slate-50">
+        <div className="w-full px-4 md:px-12 lg:px-20">
+          <div className="flex flex-col items-center text-center">
+            <h1 className="text-4xl md:text-4xl font-black text-slate-900 tracking-tight">
+              Sign <span className="text-blue-600">In</span>
+            </h1>
+            <div className="h-1.5 w-24 bg-blue-600 mt-5 rounded-full" />
+            <p className="text-slate-500 text-lg font-bold mt-6 max-w-2xl leading-relaxed">
+              Access your professional account to manage orders and explore elite printing solutions.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <form onSubmit={handleLogin} className="space-y-5">
-                <AnimatePresence>
-                  {error && (
-                      <motion.div 
-                        initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-                        className="p-4 bg-red-50 text-red-600 text-xs font-bold rounded-xl border border-red-100 flex items-center gap-3"
-                      >
-                          <div className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />
-                          {error}
-                      </motion.div>
-                  )}
-                </AnimatePresence>
+      {/* --- LOGIN FORM SECTION --- */}
+      <section>
+        <div className="w-full px-4 flex justify-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="w-full max-w-[500px] bg-white p-8 md:p-16 rounded-[40px] border border-slate-200 shadow-2xl shadow-slate-200/50"
+          >
+            <form onSubmit={handleLogin} className="space-y-8">
+              <AnimatePresence>
+                {error && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="p-5 bg-red-50 text-red-600 text-sm font-bold rounded-2xl border border-red-100 flex items-center gap-3"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-red-600 shrink-0" />
+                    {error}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-                <div className="space-y-1.5">
-                    <label className="text-[13px] font-bold text-slate-900 ml-1">Email address</label>
-                    <div className="relative group">
-                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-cyan-600 transition-colors" size={18} />
-                        <input
-                            required
-                            type="email"
-                            placeholder="name@example.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="w-full h-12 pl-12 pr-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-cyan-600 focus:bg-white focus:ring-4 focus:ring-cyan-500/5 transition-all text-sm font-medium"
-                        />
-                    </div>
+              <div className="space-y-3">
+                <label className="text-sm font-black text-slate-900 ml-1">Email Address</label>
+                <div className="relative group">
+                  <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
+                  <input
+                    required
+                    type="email"
+                    placeholder="example@business.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full h-16 pl-14 pr-6 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:bg-white outline-none text-base font-bold transition-all placeholder:text-slate-300"
+                  />
                 </div>
+              </div>
 
-                <div className="space-y-1.5">
-                    <div className="flex justify-between items-center px-1">
-                        <label className="text-[13px] font-bold text-slate-900">Password</label>
-                        <Link to="#" className="text-[11px] font-bold text-cyan-600 hover:underline">Forgot?</Link>
-                    </div>
-                    <div className="relative group">
-                        <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-cyan-600 transition-colors" size={18} />
-                        <input
-                            required
-                            type={showPassword ? "text" : "password"}
-                            placeholder="••••••••"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="w-full h-12 pl-12 pr-12 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-cyan-600 focus:bg-white focus:ring-4 focus:ring-cyan-500/5 transition-all text-sm font-medium"
-                        />
-                        <button
-                            type="button"
-                            onClick={() => setShowPassword(!showPassword)}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-slate-900 transition-colors cursor-pointer"
-                        >
-                            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                        </button>
-                    </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center px-1">
+                  <label className="text-sm font-black text-slate-900">Password</label>
+                  <Link to="#" className="text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors">Forgot Password?</Link>
                 </div>
+                <div className="relative group">
+                  <Lock className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
+                  <input
+                    required
+                    type={showPassword ? "text" : "password"}
+                    placeholder="••••••••"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full h-16 pl-14 pr-14 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:bg-white outline-none text-base font-bold transition-all placeholder:text-slate-300"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-900 transition-colors"
+                  >
+                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  </button>
+                </div>
+              </div>
 
-                <button
-                    disabled={loading}
-                    className="w-full h-14 bg-slate-900 text-white rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-cyan-600 transition-all disabled:opacity-70 shadow-xl shadow-slate-900/10 cursor-pointer flex items-center justify-center gap-3 active:scale-[0.98]"
-                >
-                    {loading ? <Loader2 className="animate-spin" size={20} /> : (
-                        <>
-                            Sign in
-                            <ArrowRight size={18} />
-                        </>
-                    )}
-                </button>
+              <button
+                disabled={loading}
+                className="w-full h-16 bg-slate-900 text-white rounded-full font-black text-sm uppercase tracking-widest hover:bg-blue-600 transition-all shadow-2xl shadow-slate-900/10 active:scale-95 disabled:opacity-50 flex items-center justify-center gap-4 mt-10"
+              >
+                {loading ? <Loader2 className="animate-spin" size={22} /> : (
+                  <>
+                    Sign In Account
+                    <ArrowRight size={20} />
+                  </>
+                )}
+              </button>
             </form>
 
-            <div className="mt-10 pt-8 border-t border-gray-100 flex flex-col items-center gap-6">
-                <p className="text-sm text-gray-500 font-medium">
-                    Don't have an account?{' '}
-                    <Link to="/signup" className="text-cyan-600 font-bold hover:underline">Create account</Link>
-                </p>
-               
-               
+            <div className="mt-12 pt-8 border-t border-slate-100 text-center">
+              <p className="text-slate-500 font-bold">
+                New toInktrix Printers?{' '}
+                <Link to="/signup" className="text-blue-600 font-black hover:text-blue-700 transition-colors">Create Account</Link>
+              </p>
             </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

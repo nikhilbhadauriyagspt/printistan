@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Features from "@/components/Features";
 import TopShowcase from "@/components/TopShowcase";
 import SEO from "@/components/SEO";
 import Collections from "@/components/Collections";
@@ -10,7 +11,7 @@ import TripleBanners from "@/components/TripleBanners";
 import QuickPicks from "@/components/QuickPicks";
 import TheVault from "@/components/TheVault";
 import PromotionGrid from "@/components/PromotionGrid";
-import { Shield, Wrench, ArrowUpRight, RefreshCw, ArrowRight, Loader2, ChevronRight, Zap, Globe, Layers } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Loader2, ChevronRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -85,58 +86,12 @@ export default function Home() {
   return (
     <div className="bg-white font-jakarta overflow-x-hidden text-slate-900">
       <SEO 
-        title="My Printer Store | Quality Printers & Printer"
+        title="Inktrix Printers | Quality Printers & Printer"
         description="Your trusted source for high-quality printers and printing printer. Delivering excellence across the USA."
       />
 
       <Hero />
-
-      {/* --- PREMIUM FEATURES SECTION --- */}
-      <section className="py-12 bg-white border-b border-slate-100">
-        <div className=" mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex items-center gap-5 group p-4 hover:bg-slate-50 transition-colors duration-300 border border-transparent hover:border-slate-100">
-              <div className="h-14 w-14 rounded-full bg-cyan-50 flex items-center justify-center text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                <Globe size={28} strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="text-[15px] font-black text-slate-900 uppercase tracking-wider mb-1">Global Shipping</h4>
-                <p className="text-[13px] text-slate-500 font-medium leading-relaxed">Fast & reliable delivery to your doorstep worldwide.</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-5 group p-4 hover:bg-slate-50 transition-colors duration-300 border border-transparent hover:border-slate-100">
-              <div className="h-14 w-14 rounded-full bg-cyan-50 flex items-center justify-center text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                <Shield size={28} strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="text-[15px] font-black text-slate-900 uppercase tracking-wider mb-1">Secure Checkout</h4>
-                <p className="text-[13px] text-slate-500 font-medium leading-relaxed">100% protected payments with industry-standard.</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-5 group p-4 hover:bg-slate-50 transition-colors duration-300 border border-transparent hover:border-slate-100">
-              <div className="h-14 w-14 rounded-full bg-cyan-50 flex items-center justify-center text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                <Layers size={28} strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="text-[15px] font-black text-slate-900 uppercase tracking-wider mb-1">Elite Inventory</h4>
-                <p className="text-[13px] text-slate-500 font-medium leading-relaxed">A curated collection of high-performance printing .</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-5 group p-4 hover:bg-slate-50 transition-colors duration-300 border border-transparent hover:border-slate-100">
-              <div className="h-14 w-14 rounded-full bg-cyan-50 flex items-center justify-center text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                <RefreshCw size={28} strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="text-[15px] font-black text-slate-900 uppercase tracking-wider mb-1">Easy Returns</h4>
-                <p className="text-[13px] text-slate-500 font-medium leading-relaxed">Hassle-free 30-day return policy for your peace of mind.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Features />
 
       <ShopByCategory categories={data.categories} loading={data.loading} />
       <BestSellers products={data.all} loading={data.loading} />

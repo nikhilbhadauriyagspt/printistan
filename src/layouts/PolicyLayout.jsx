@@ -20,7 +20,7 @@ export default function PolicyLayout({ title, subtitle, lastUpdated, children })
 
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
-                {title.split(' ').slice(0, -1).join(' ')} <span className="text-cyan-600">{title.split(' ').pop()}</span>
+                {title.split(' ').slice(0, -1).join(' ')} <span className="text-blue-600">{title.split(' ').pop()}</span>
               </h1>
               
               {subtitle && (

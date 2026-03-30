@@ -139,7 +139,7 @@ export default function Checkout() {
             <Package size={48} className="text-gray-300 mx-auto mb-4" />
             <h2 className="text-xl font-bold mb-2">Your cart is empty</h2>
             <p className="text-gray-500 mb-8 text-sm font-medium leading-relaxed">Please add some items to your cart before proceeding to checkout.</p>
-            <Link to="/shop" className="inline-flex items-center gap-2 bg-slate-900 text-white px-10 py-3 rounded-lg font-bold text-xs hover:bg-cyan-600 transition-all active:scale-95 shadow-lg">
+            <Link to="/shop" className="inline-flex items-center gap-2 bg-slate-900 text-white px-10 py-3 rounded-lg font-bold text-xs hover:bg-blue-600 transition-all active:scale-95 shadow-lg">
                 Return to Shop
             </Link>
         </div>
@@ -150,7 +150,7 @@ export default function Checkout() {
   if (step === 3) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center pt-20 px-6 font-jakarta text-slate-900">
-        <SEO title="Order Confirmed | My Printer Store" />
+        <SEO title="Order Confirmed |Inktrix Printers" />
         <div className="max-w-[500px] w-full text-center space-y-10">
           <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="h-24 w-24 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto border border-green-100 shadow-xl">
             <CheckCircle2 size={48} />
@@ -163,7 +163,7 @@ export default function Checkout() {
             </p>
           </div>
           <div className="pt-4 flex flex-col gap-4">
-            <Link to="/orders" className="w-full h-16 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold text-sm shadow-lg hover:bg-cyan-600 transition-all">
+            <Link to="/orders" className="w-full h-16 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold text-sm shadow-lg hover:bg-blue-600 transition-all">
               Track my order
             </Link>
             <Link to="/" className="w-full h-16 bg-gray-50 text-slate-900 rounded-xl flex items-center justify-center font-bold text-sm hover:bg-gray-100 transition-all">
@@ -177,7 +177,7 @@ export default function Checkout() {
 
   return (
     <div className="min-h-screen bg-white font-jakarta text-slate-900 overflow-x-hidden pt-32 pb-24 px-4 md:px-10">
-      <SEO title="Secure Checkout | My Printer Store" />
+      <SEO title="Secure Checkout |Inktrix Printers" />
       
       <div className="w-full px-0 md:px-4">
         
@@ -186,7 +186,7 @@ export default function Checkout() {
           <div className="space-y-2 text-left">
             <div className="flex items-center gap-3 mb-2">
                 {[1, 2].map((s) => (
-                    <div key={s} className={cn("h-2 w-8 rounded-full transition-all duration-500", step >= s ? "bg-cyan-500" : "bg-gray-100")} />
+                    <div key={s} className={cn("h-2 w-8 rounded-full transition-all duration-500", step >= s ? "bg-blue-500" : "bg-gray-100")} />
                 ))}
             </div>
             <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-none">
@@ -228,33 +228,33 @@ export default function Checkout() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">First name</label>
-                        <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-cyan-600 focus:bg-white outline-none text-sm font-medium transition-all" />
+                        <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-blue-600 focus:bg-white outline-none text-sm font-medium transition-all" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Last name</label>
-                        <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-cyan-600 focus:bg-white outline-none text-sm font-medium transition-all" />
+                        <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-blue-600 focus:bg-white outline-none text-sm font-medium transition-all" />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Street address</label>
-                      <input required type="text" name="address" value={formData.address} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-cyan-600 focus:bg-white outline-none text-sm font-medium transition-all" />
+                      <input required type="text" name="address" value={formData.address} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-blue-600 focus:bg-white outline-none text-sm font-medium transition-all" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">City</label>
-                        <input required type="text" name="city" value={formData.city} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-cyan-600 focus:bg-white outline-none text-sm font-medium transition-all" />
+                        <input required type="text" name="city" value={formData.city} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-blue-600 focus:bg-white outline-none text-sm font-medium transition-all" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Zip code</label>
-                        <input required type="text" name="zipCode" value={formData.zipCode} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-cyan-600 focus:bg-white outline-none text-sm font-medium transition-all" />
+                        <input required type="text" name="zipCode" value={formData.zipCode} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-blue-600 focus:bg-white outline-none text-sm font-medium transition-all" />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Phone number</label>
-                      <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-cyan-600 outline-none text-sm font-medium transition-all" />
+                      <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full h-14 px-5 bg-gray-50 border border-gray-100 rounded-xl focus:border-blue-600 outline-none text-sm font-medium transition-all" />
                     </div>
                   </div>
-                  <button type="submit" className="w-full h-16 bg-slate-900 text-white rounded-xl font-bold text-sm shadow-xl hover:bg-cyan-600 transition-all flex items-center justify-center gap-3">
+                  <button type="submit" className="w-full h-16 bg-slate-900 text-white rounded-xl font-bold text-sm shadow-xl hover:bg-blue-600 transition-all flex items-center justify-center gap-3">
                     Continue to payment <ArrowRight size={20} />
                   </button>
                 </motion.div>
@@ -275,19 +275,19 @@ export default function Checkout() {
                                 key={method.id} onClick={() => setFormData({...formData, paymentMethod: method.id})}
                                 className={cn(
                                     "p-6 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between",
-                                    formData.paymentMethod === method.id ? "border-cyan-600 bg-cyan-50/10 shadow-lg shadow-cyan-600/5" : "border-gray-100 bg-white hover:border-gray-200"
+                                    formData.paymentMethod === method.id ? "border-blue-600 bg-blue-50/10 shadow-lg shadow-blue-600/5" : "border-gray-100 bg-white hover:border-gray-200"
                                 )}
                             >
                                 <div className="flex items-center gap-5">
-                                    <div className={cn("h-6 w-6 rounded-full border-2 flex items-center justify-center transition-colors", formData.paymentMethod === method.id ? "border-cyan-600" : "border-gray-300")}>
-                                        {formData.paymentMethod === method.id && <div className="h-3 w-3 bg-cyan-600 rounded-full" />}
+                                    <div className={cn("h-6 w-6 rounded-full border-2 flex items-center justify-center transition-colors", formData.paymentMethod === method.id ? "border-blue-600" : "border-gray-300")}>
+                                        {formData.paymentMethod === method.id && <div className="h-3 w-3 bg-blue-600 rounded-full" />}
                                     </div>
                                     <div className="space-y-0.5">
                                         <p className="text-base font-bold text-slate-900">{method.label}</p>
                                         <p className="text-xs text-slate-500 font-medium">{method.desc}</p>
                                     </div>
                                 </div>
-                                <method.icon size={24} className={cn("transition-colors", formData.paymentMethod === method.id ? "text-cyan-600" : "text-gray-300")} />
+                                <method.icon size={24} className={cn("transition-colors", formData.paymentMethod === method.id ? "text-blue-600" : "text-gray-300")} />
                             </div>
                         ))}
                     </div>
@@ -313,7 +313,7 @@ export default function Checkout() {
                             />
                         </div>
                     ) : (
-                        <button type="submit" disabled={loading} className="w-full max-w-md h-16 bg-slate-900 text-white rounded-xl font-bold text-xs shadow-xl hover:bg-cyan-600 transition-all flex items-center justify-center gap-3 disabled:opacity-50 active:scale-[0.98]">
+                        <button type="submit" disabled={loading} className="w-full max-w-md h-16 bg-slate-900 text-white rounded-xl font-bold text-xs shadow-xl hover:bg-blue-600 transition-all flex items-center justify-center gap-3 disabled:opacity-50 active:scale-[0.98]">
                             {loading ? <Loader2 size={20} className="animate-spin" /> : "Complete order"}
                             {!loading && <CheckCircle2 size={20} />}
                         </button>
@@ -353,12 +353,12 @@ export default function Checkout() {
                 </div>
                 <div className="flex justify-between text-sm font-medium text-slate-500">
                   <span>Shipping</span>
-                  <span className="text-cyan-600 font-bold uppercase text-[10px] tracking-widest">Free</span>
+                  <span className="text-blue-600 font-bold uppercase text-[10px] tracking-widest">Free</span>
                 </div>
                 <div className="h-px bg-gray-200 w-full" />
                 <div className="flex justify-between items-end">
                   <span className="text-base font-bold text-slate-900">Grand total</span>
-                  <span className="text-4xl font-bold text-cyan-600 leading-none tracking-tighter">${total.toLocaleString()}</span>
+                  <span className="text-4xl font-bold text-blue-600 leading-none tracking-tighter">${total.toLocaleString()}</span>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3 text-slate-300">

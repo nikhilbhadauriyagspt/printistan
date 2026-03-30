@@ -84,7 +84,7 @@ export default function ProductDetail() {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-white font-jakarta">
-        <Loader2 className="animate-spin h-8 w-8 text-cyan-600 mb-6" strokeWidth={1.5} />
+        <Loader2 className="animate-spin h-8 w-8 text-blue-600 mb-6" strokeWidth={1.5} />
         <p className="text-xs font-bold text-gray-400">Loading details...</p>
       </div>
     );
@@ -97,7 +97,7 @@ export default function ProductDetail() {
            <ShoppingBag size={32} className="text-gray-200" />
         </div>
         <h2 className="text-xl font-bold mb-4">Product not found</h2>
-        <Link to="/shop" className="inline-flex items-center gap-3 bg-slate-900 text-white h-12 px-8 rounded-lg font-bold text-xs hover:bg-cyan-600 transition-all shadow-lg active:scale-95">
+        <Link to="/shop" className="inline-flex items-center gap-3 bg-slate-900 text-white h-12 px-8 rounded-lg font-bold text-xs hover:bg-blue-600 transition-all shadow-lg active:scale-95">
           Return to shop
         </Link>
       </div>
@@ -109,15 +109,15 @@ export default function ProductDetail() {
 
   return (
     <div className="bg-white min-h-screen pt-32 pb-24 font-jakarta text-slate-900 overflow-x-hidden">
-      <SEO title={`${product.name} | My Printer Store`} description={product.description?.substring(0, 160)} />
+      <SEO title={`${product.name} |Inktrix Printers`} description={product.description?.substring(0, 160)} />
       
       <div className="max-w-[1400px] mx-auto px-4 md:px-10">
         
         {/* --- BREADCRUMBS --- */}
         <nav className="flex items-center gap-2 text-xs font-bold text-slate-400 mb-10 overflow-hidden">
-          <Link to="/" className="hover:text-cyan-600 transition-colors shrink-0">Home</Link>
+          <Link to="/" className="hover:text-blue-600 transition-colors shrink-0">Home</Link>
           <ChevronRight size={12} className="shrink-0" />
-          <Link to="/shop" className="hover:text-cyan-600 transition-colors shrink-0">Shop</Link>
+          <Link to="/shop" className="hover:text-blue-600 transition-colors shrink-0">Shop</Link>
           <ChevronRight size={12} className="shrink-0" />
           <span className="text-slate-900 truncate font-semibold">{product.name}</span>
         </nav>
@@ -126,7 +126,7 @@ export default function ProductDetail() {
           
           {/* --- LEFT: GALLERY --- */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="relative aspect-square bg-gray-50 rounded-2xl flex items-center justify-center p-10 md:p-16 overflow-hidden border border-gray-100 group transition-all duration-500 hover:border-cyan-100 shadow-sm">
+            <div className="relative aspect-square bg-gray-50 rounded-2xl flex items-center justify-center p-10 md:p-16 overflow-hidden border border-gray-100 group transition-all duration-500 hover:border-blue-100 shadow-sm">
               <motion.img 
                 key={activeImage}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -171,7 +171,7 @@ export default function ProductDetail() {
           <div className="lg:col-span-7 space-y-8 lg:pt-4">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                 <span className="text-[10px] font-bold uppercase tracking-widest text-cyan-600">Product details</span>
+                 <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Product details</span>
               </div>
 
               <h1 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
@@ -188,7 +188,7 @@ export default function ProductDetail() {
 
             <div className="space-y-3">
                <div className="flex items-center gap-2 text-slate-900">
-                  <Info size={16} className="text-cyan-600" />
+                  <Info size={16} className="text-blue-600" />
                   <h4 className="text-xs font-bold uppercase tracking-widest">Description</h4>
                </div>
                <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">
@@ -208,7 +208,7 @@ export default function ProductDetail() {
                 <button 
                   onClick={handleAddToCart}
                   disabled={isAdded}
-                  className="flex-1 h-14 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-cyan-600 transition-all shadow-lg active:scale-95 disabled:opacity-50 flex items-center justify-center gap-3"
+                  className="flex-1 h-14 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-blue-600 transition-all shadow-lg active:scale-95 disabled:opacity-50 flex items-center justify-center gap-3"
                 >
                   {isAdded ? <CheckCircle size={18} /> : <ShoppingBag size={18} />}
                   {isAdded ? "Added to cart" : "Add to cart"}
@@ -223,7 +223,7 @@ export default function ProductDetail() {
                   { icon: <RefreshCcw size={18} />, label: "Easy returns" }
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center gap-2 text-center group">
-                    <div className="text-gray-300 group-hover:text-cyan-600 transition-colors duration-300">{item.icon}</div>
+                    <div className="text-gray-300 group-hover:text-blue-600 transition-colors duration-300">{item.icon}</div>
                     <span className="text-[10px] font-bold text-gray-400">{item.label}</span>
                   </div>
                 ))}
@@ -237,14 +237,14 @@ export default function ProductDetail() {
           <div className="mt-24 pt-16 border-t border-gray-100">
             <div className="flex items-center justify-between mb-10">
               <h2 className="text-2xl font-bold text-slate-900">Related products</h2>
-              <Link to="/shop" className="group flex items-center gap-2 text-cyan-600 font-bold text-xs uppercase tracking-widest">
+              <Link to="/shop" className="group flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest">
                 View all <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 md:gap-6">
               {relatedProducts.slice(0, 6).map((p) => (
-                <div key={p.id} className="bg-white border border-gray-100 rounded-xl p-4 flex flex-col h-full hover:border-cyan-500 transition-all duration-300 group">
+                <div key={p.id} className="bg-white border border-gray-100 rounded-xl p-4 flex flex-col h-full hover:border-blue-500 transition-all duration-300 group">
                   <div className="relative aspect-square w-full mb-4 flex items-center justify-center overflow-hidden bg-gray-50 rounded-lg">
                     <Link to={`/product/${p.slug}`} className="absolute inset-0 z-10" />
                     <img src={getImagePath(p.images)} className="max-h-[85%] max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105" alt={p.name} />
@@ -252,7 +252,7 @@ export default function ProductDetail() {
 
                   <div className="flex-1 flex flex-col">
                     <Link to={`/product/${p.slug}`}>
-                      <h3 className="text-[12px] font-bold text-slate-800 group-hover:text-cyan-600 transition-colors line-clamp-2 mb-2">{p.name}</h3>
+                      <h3 className="text-[12px] font-bold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-2 mb-2">{p.name}</h3>
                     </Link>
                     <span className="text-base font-bold text-slate-900 mt-auto">${parseFloat(p.price).toLocaleString()}</span>
                   </div>

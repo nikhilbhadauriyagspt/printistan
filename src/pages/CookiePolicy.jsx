@@ -7,11 +7,11 @@ export default function CookiePolicy() {
     <PolicyLayout
       title="Cookie policy"
       subtitle="This cookie policy explains how we use cookies and similar technologies to provide you with a better shopping experience."
-      lastUpdated="March 28, 2026"
+      lastUpdated="March 31, 2026"
     >
       <p className="lead">
-        This cookie policy explains how My Printer Store
-        ("company," "we," "us," or "our") uses cookies and similar technologies when you visit our website: <a href="https://myprinterstore.shop/">https://myprinterstore.shop/</a>
+        This cookie policy explains howInktrix Printers
+        ("company," "we," "us," or "our") uses cookies and similar technologies when you visit our website: <a href="https://inktrixprinters.shop/">https://inktrixprinters.shop/</a>
       </p>
       <p>
         This policy should be read together with our <Link to="/privacy-policy">Privacy policy</Link> and <Link to="/terms-and-conditions">Terms and conditions</Link>.
@@ -80,7 +80,7 @@ export default function CookiePolicy() {
         We do not sell personal information. If you have any concerns regarding how your data is shared for advertising, you may exercise your rights by:
       </p>
       <ul>
-        <li>Emailing: <a href="mailto:info@myprinterstore.shop">info@myprinterstore.shop</a></li>
+        <li>Emailing: <a href="mailto:info@inktrixprinters.shop">info@inktrixprinters.shop</a></li>
         <li>Visiting: <Link to="/contact">Contact us</Link></li>
       </ul>
 
@@ -89,9 +89,9 @@ export default function CookiePolicy() {
       <p>If you have any questions regarding this cookie policy, please contact us:</p>
       <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 my-8 not-prose">
         <address className="not-italic text-slate-700 font-bold leading-relaxed space-y-1">
-          <p className="text-slate-900">My Printer Store</p>
-          <p>1401 N Loop W, Houston, TX 77008, USA</p>
-          <p className="pt-4 text-cyan-600 font-bold">info@myprinterstore.shop</p>
+          <p className="text-slate-900">Inktrix Printers</p>
+          <p>1800 Surveyor Blvd, Carrollton, TX 75006, USA</p>
+          <p className="pt-4 text-cyan-600 font-bold">info@inktrixprinters.shop</p>
         </address>
       </div>
     </PolicyLayout>
