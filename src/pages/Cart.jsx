@@ -24,17 +24,7 @@ export default function Cart() {
       <div className="bg-white min-h-screen font-jakarta text-slate-900 overflow-x-hidden">
         <SEO title="Empty Cart | Intrix Printers" />
         
-        {/* --- PAGE HEADER --- */}
-        <section className="pt-24 pb-16 bg-white border-b border-slate-50">
-          <div className="w-full px-4 md:px-12 lg:px-20">
-            <div className="flex flex-col items-center text-center">
-              <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-                Your <span className="text-blue-600">Cart</span>
-              </h1>
-              <div className="h-1.5 w-24 bg-blue-600 mt-5 rounded-full" />
-            </div>
-          </div>
-        </section>
+        
 
         <section className="py-20 bg-slate-50 min-h-[60vh] flex items-center justify-center">
           <div className="text-center py-20 bg-white rounded-[40px] border border-slate-200 shadow-xl max-w-4xl mx-auto px-12">
