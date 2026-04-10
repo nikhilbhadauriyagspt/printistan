@@ -9,6 +9,7 @@ import CategorySlider from "@/components/CategorySlider";
 import BestSellers from "@/components/BestSellers";
 import TripleBanners from "@/components/TripleBanners";
 import QuickPicks from "@/components/QuickPicks";
+import SupportCTA from "@/components/SupportCTA";
 import TheVault from "@/components/TheVault";
 import PromotionGrid from "@/components/PromotionGrid";
 import { ArrowUpRight, ArrowRight, Loader2, ChevronRight, Zap } from "lucide-react";
@@ -105,6 +106,7 @@ export default function Home() {
         products={data.printers} 
         loading={data.loading}
       />
+      <SupportCTA />
        
   </div>
   );

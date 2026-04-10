@@ -55,7 +55,7 @@ export default function ShopByCategory({ categories = [], loading = false }) {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black text-slate-900 "
+            className="text-2xl md:text-4xl font-black text-slate-900 "
           >
             Shop by Category
           </motion.h2>
