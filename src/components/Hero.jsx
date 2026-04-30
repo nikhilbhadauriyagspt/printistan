@@ -93,6 +93,7 @@ const Hero = () => {
                         alt={cat.name} 
                         width={40}
                         height={40}
+                        loading="eager"
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           e.target.src = 'https://via.placeholder.com/40x40?text=P';
@@ -159,16 +160,20 @@ const Hero = () => {
             </button>
 
             {/* Progress Dots */}
-            <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2.5 bg-black/20 backdrop-blur-md px-4 py-2.5 rounded-full z-20">
+            <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-black/20 backdrop-blur-md px-3 py-1 rounded-full z-20">
               {banners.map((_, index) => (
                 <button
                   key={index}
                   onClick={(e) => { e.preventDefault(); setCurrentSlide(index); }}
                   aria-label={`Go to slide ${index + 1}`}
-                  className={`transition-all duration-300 rounded-full ${
-                    index === currentSlide ? 'w-6 h-2.5 bg-white' : 'w-2.5 h-2.5 bg-white/50 hover:bg-white/70'
-                  }`}
-                />
+                  className="w-10 h-10 flex items-center justify-center transition-all duration-300 group/dot"
+                >
+                  <div
+                    className={`transition-all duration-300 rounded-full ${
+                      index === currentSlide ? 'w-6 h-2.5 bg-white' : 'w-2.5 h-2.5 bg-white/50 group-hover/dot:bg-white/70'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </div>
