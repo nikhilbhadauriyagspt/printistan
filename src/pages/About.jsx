@@ -23,17 +23,17 @@ const processCards = [
   },
   {
     title: 'Quick Shipping',
-    desc: 'We partner with leading logistical providers to guarantee that your documentation tools arrive on schedule.',
+    desc: 'We partner with leading logistical providers to guarantee that your items arrive on schedule.',
     icon: <Zap size={18} />
   },
   {
     title: 'Quality Checked',
-    desc: 'Every model undergoes a rigorous performance review and reliability check before being cleared for dispatch.',
+    desc: 'Every model undergoes a rigorous review and reliability check before being cleared for dispatch.',
     icon: <CheckCircle2 size={18} />
   },
   {
     title: 'Seamless Integration',
-    desc: 'We provide detailed orientation and setup assistance to help you integrate our solutions into your workflow effortlessly.',
+    desc: 'We provide detailed orientation and setup assistance to help you use our products in your workflow effortlessly.',
     icon: <Users size={18} />
   },
 ];
@@ -47,7 +47,7 @@ const whyChooseUs = [
   },
   {
     icon: Users,
-    title: 'Professional Insight',
+    title: 'Expert Insight',
     desc: 'Our specialists are dedicated to helping you find the right fit for your needs.',
     color: 'text-blue-500'
   },
@@ -70,7 +70,7 @@ const About = () => {
     <div className="min-h-screen bg-white text-[#333] font-poppins">
       <SEO
         title="About Our Mission | Printistan - Your Documentation Partner"
-        description="Discover our commitment to providing high-performance imaging solutions and expert support for businesses and homes across the United States."
+        description="Discover our commitment to providing quality products and help for businesses and homes across the United States."
       />
 
       {/* --- MINIMAL HERO --- */}
@@ -84,11 +84,11 @@ const About = () => {
             >
               <span className="text-[11px] font-bold text-blue-600 tracking-[0.2em] uppercase mb-4 block">Our Journey</span>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-[#111] leading-tight mb-6">
-                Reliable Imaging Solutions for <span className="text-blue-600 font-light italic">Modern Workspaces.</span>
+                Reliable Printing Solutions for <span className="text-blue-600 font-light italic">Modern Workspaces.</span>
               </h1>
               <h3 className="text-xl md:text-2xl font-medium text-gray-700 mb-6">Empowering Your Daily Operations with Precision.</h3>
               <p className="text-[16px] md:text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto md:mx-0 mb-10 font-light">
-                At Printistan, we simplify the process of finding dependable equipment and high-quality supplies. Our goal is to provide comprehensive support and efficient tools that allow you to focus on what matters most—your work.
+                At Printistan, we simplify the process of finding dependable equipment and high-quality supplies. Our goal is to provide help and efficient tools that allow you to focus on what matters most—your work.
               </p>
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-5">
                 <Link
@@ -111,7 +111,7 @@ const About = () => {
               transition={{ delay: 0.2 }}
               className="flex-1 flex justify-center md:justify-end"
             >
-              <img src={aboutImg} alt="Professional office equipment" className="w-full max-w-md lg:max-w-xl h-auto object-contain mix-blend-multiply opacity-90" />
+              <img src={aboutImg} alt="Quality office equipment" className="w-full max-w-md lg:max-w-xl h-auto object-contain mix-blend-multiply opacity-90" />
             </motion.div>
           </div>
         </div>
@@ -144,7 +144,7 @@ const About = () => {
                  <h3 className="text-xl font-semibold text-[#111]">Our Dedicated Mission</h3>
               </div>
               <p className="text-[15px] md:text-[16px] text-gray-500 font-light leading-relaxed">
-                We are committed to delivering stable documentation platforms and intuitive support that enable our clients to operate with total confidence and streamlined convenience.
+                We are committed to delivering stable printing platforms and help that enable our clients to operate with total confidence and convenience.
               </p>
             </div>
             <div>
@@ -153,7 +153,7 @@ const About = () => {
                  <h3 className="text-xl font-semibold text-[#111]">Our Forward Vision</h3>
               </div>
               <p className="text-[15px] md:text-[16px] text-gray-500 font-light leading-relaxed">
-                We aim to be the premier destination for modern imaging requirements by offering effective products, steadfast service, and a superior customer experience.
+                We aim to be the premier destination for modern needs by offering effective products, steadfast service, and a superior customer experience.
               </p>
             </div>
           </div>

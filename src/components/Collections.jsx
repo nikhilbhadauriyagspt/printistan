@@ -26,7 +26,7 @@ const collectionData = [
     desc: "Vibrant photo printing for design professionals.",
     image: bannerImg,
     link: "/shop?category=photo-printers",
-    tag: "Premium"
+    tag: "Exclusive"
   }
 ];
 

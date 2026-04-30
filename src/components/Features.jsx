@@ -27,8 +27,8 @@ const features = [
   },
   {
     icon: <Headphones size={22} />,
-    title: "24/7 Expert Support",
-    desc: "Dedicated help for your needs",
+    title: "24/7 Support",
+    desc: "Help for your needs",
     color: "text-purple-600",
     bg: "bg-purple-50"
   }

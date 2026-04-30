@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 export default function AboutSection() {
   const points = [
-    { title: "Reliable Quality", desc: "We choose only the best printers and genuine ink from brands you know and trust.", icon: <Award className="text-blue-600" size={20} /> },
-    { title: "Expert Support", desc: "Our skilled team is here 24/7 to assist you in finding the right printer for your needs.", icon: <Users className="text-blue-600" size={20} /> },
-    { title: "Fast Shipping", desc: "With our quick delivery system, we make sure your new gear arrives at your door on time.", icon: <Zap className="text-blue-600" size={20} /> },
+    { title: "Reliable Quality", desc: "We provide only the best products and ink for all your needs.", icon: <Award className="text-blue-600" size={20} /> },
+    { title: "Friendly Help", desc: "Our team is here 24/7 to help you find exactly what you are looking for.", icon: <Users className="text-blue-600" size={20} /> },
+    { title: "Fast Shipping", desc: "With our quick delivery system, we make sure your gear arrives at your door on time.", icon: <Zap className="text-blue-600" size={20} /> },
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function AboutSection() {
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.1)] border-8 border-white">
               <img
                 src="/category/all-in-one-printers.jpg"
-                alt="High-performance imaging device"
+                alt="Reliable printing tools"
                 width={800}
                 height={600}
                 loading="lazy"
@@ -50,7 +50,7 @@ export default function AboutSection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-blue-600 text-[13px] font-bold mb-6">
               <span className="h-2 w-2 bg-blue-600 rounded-full animate-pulse" />
-              Our Commitment to Excellence
+              Our Commitment to You
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-[1.1] mb-8">
@@ -58,19 +58,19 @@ export default function AboutSection() {
             </h2>
             
             <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-6 leading-relaxed">
-              Reliable printing solutions for your home and office.
+              Reliable solutions for your home and office.
             </h3>
 
             <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-6">
-              Finding the right imaging device should be a simple process. At Printistan, we focus on providing high-quality hardware for every documentation need. Our team hand-picks top-rated machines and genuine supplies to ensure your work always looks its best. Whether you need a small desk unit or a robust system for a busy workplace, we have the tools to help you succeed.
+              Finding the right tools for your work should be easy. At Printistan, we focus on providing quality products for all your needs. We select top-rated machines and supplies to ensure your work always looks its best. Whether you need a small desk unit or a bigger system for your office, we have the right options for you.
             </p>
 
             <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-6">
-              We are dedicated to your satisfaction from the moment you browse our shop. Our catalog features trusted brands that stand for durability and performance. We don't just sell equipment; we offer a complete support experience. Our experts are ready to provide guidance on setup, maintenance, and finding the perfect ink or toner for your specific model.
+              We are dedicated to making sure you are happy with your purchase. We don't just sell products; we want to help you get the best results. Our team is ready to give you advice on setup and finding the perfect ink or toner for your specific model.
             </p>
 
             <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-10">
-              In today's fast-paced world, clear and efficient documentation is vital. That's why we prioritize speed and reliability in our shipping and service. We offer quick delivery across the USA, ensuring that your new technology arrives ready to work. By choosing us, you are investing in a partner committed to your long-term operational success and professional growth. We believe in making high-end technology accessible to everyone, regardless of their technical background.
+              In today's fast world, clear and fast results are important. That's why we focus on speed and reliability. We offer quick delivery across the USA, ensuring that your items arrive ready to use. By choosing us, you are getting a partner who cares about your work and growth.
             </p>
 
             <div className="grid gap-6 mb-12">

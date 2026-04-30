@@ -1,12 +1,11 @@
 # Printistan
 
-Printistan is a premier online retailer specializing in high-performance printers, genuine ink, toners, and printer accessories across the United States.
+Printistan is a premier online retailer specializing in printers, ink, toners, and accessories across the United States.
 
 ## Key Offerings
 - **Printers**: Laser, Inkjet, Supertank, LED, Thermal, Photo, and All-In-One solutions.
-- **Supplies**: Genuine ink cartridges, toners, and printer maintenance accessories.
-- **Brands**: Top brands including HP, Canon, Epson, Brother, Lexmark, and Xerox.
-- **Services**: Fast nationwide shipping across the USA and 24/7 expert support.
+- **Supplies**: Genuine ink cartridges, toners, and maintenance accessories.
+- **Services**: Fast nationwide shipping across the USA and 24/7 support.
 
 ## Contact Information
 - **Website**: https://printistan.shop

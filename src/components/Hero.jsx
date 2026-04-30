@@ -4,7 +4,7 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 import API_BASE_URL from '../config';
 
 const banners = [
-  { id: 1, image: "/optimized/hero-main.avif", alt: "Premium Printers" },
+  { id: 1, image: "/optimized/hero-main.avif", alt: "Quality Printers" },
   { id: 2, image: "/optimized/hero-slide2.avif", alt: "Latest Printer Models" },
   { id: 3, image: "/optimized/hero-slide3.avif", alt: "Printer Accessories" }
 ];
