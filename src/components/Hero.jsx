@@ -110,7 +110,7 @@ const Hero = () => {
 
           {/* Right Banner Slider */}
           <div 
-            className="relative w-full overflow-hidden rounded-[28px] xl:rounded-none 2xl:rounded-[28px] bg-[#d9ecff] h-[220px] sm:h-[320px] md:h-[420px] lg:h-[520px] xl:h-auto xl:aspect-[1920/660] 2xl:h-[660px]"
+            className="relative w-full overflow-hidden rounded-[28px] xl:rounded-none 2xl:rounded-[28px] bg-[#d9ecff] h-[220px] sm:h-[320px] md:h-[420px] lg:h-[520px] xl:h-auto xl:aspect-[1920/800] 2xl:h-[660px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
