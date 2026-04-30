@@ -447,7 +447,7 @@ export default function Header() {
             className="fixed inset-0 z-[1000] bg-[#111111]/95 backdrop-blur-md p-6"
           >
             <div className="flex justify-between items-center mb-10">
-              <img src="/logo/logo.png" alt="" width={150} height={32} className="h-8" />
+              <img src="/logo/logo.png" alt="" width={150} height={32} loading="eager" className="h-8" />
               <button onClick={() => setIsMobileSearchOpen(false)}>
                 <X size={30} className="text-white" />
               </button>
@@ -542,7 +542,7 @@ export default function Header() {
               className="fixed top-0 left-0 bottom-0 w-[310px] bg-white z-[210] flex flex-col shadow-2xl"
             >
               <div className="p-8 border-b border-gray-100 flex justify-between items-center">
-                <img src="/logo/logo.png" alt="" width={150} height={32} className="h-8" />
+                <img src="/logo/logo.png" alt="" width={150} height={32} loading="eager" className="h-8" />
                 <button onClick={() => setIsSidebarOpen(false)} className="p-2 bg-gray-50 rounded-lg">
                   <X size={22} />
                 </button>
