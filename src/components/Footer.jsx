@@ -114,7 +114,7 @@ export default function Footer() {
             <Link to="/" aria-label="Printistan Home">
               <span className="sr-only">Printistan Home</span>
               <img 
-                src="/logo/logo.png" 
+                src="/optimized/logo.avif" 
                 alt="Printistan" 
                 width={200}
                 height={48}

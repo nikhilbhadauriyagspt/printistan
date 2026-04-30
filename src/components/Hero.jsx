@@ -73,21 +73,21 @@ const Hero = () => {
   }, [nextSlide]);
 
   return (
-    <section className="w-full bg-[#f5f5f5] pt-4 md:pt-6 pb-6">
-      <div className="max-w-[1920px] mx-auto px-3 md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 xl:grid-cols-[320px_minmax(0,1fr)] gap-5 items-start">
+    <section className="w-full bg-[#f5f5f5] pt-4  md:pt-0 lg:pt-4 ">
+      <div className="max-w-[1920px] mx-auto px-3 md:px-6 lg:px-0">
+        <div className="grid grid-cols-1 xl:block 2xl:grid 2xl:grid-cols-[320px_minmax(0,1fr)] gap-5 items-start">
           
           {/* Left Category Panel */}
-          <div className="bg-white rounded-[24px] shadow-[0_10px_35px_rgba(0,0,0,0.05)] border border-[#ececec] overflow-hidden h-full">
+          <div className="hidden 2xl:block bg-white rounded-[24px] shadow-[0_10px_35px_rgba(0,0,0,0.05)] border border-[#ececec] overflow-hidden h-full">
             <div className="py-2">
               {categories.map((cat) => (
                 <Link
                   key={cat.id}
                   to={`/shop?category=${cat.slug}`}
-                  className="flex items-center justify-between px-5 md:px-6 py-3 text-[14px] md:text-[15px] font-medium text-[#1a1a1a] hover:bg-blue-50/50 hover:text-blue-600 transition-all duration-300 group"
+                  className="flex items-center justify-between px-6 py-3 text-[15px] font-medium text-[#1a1a1a] hover:bg-blue-50/50 hover:text-blue-600 transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-100 overflow-hidden flex-shrink-0 bg-gray-50 group-hover:border-blue-200 transition-colors">
+                    <div className="w-10 h-10 rounded-full border border-gray-100 overflow-hidden flex-shrink-0 bg-gray-50 group-hover:border-blue-200 transition-colors">
                       <img 
                         src={cat.icon} 
                         alt={cat.name} 
@@ -110,7 +110,7 @@ const Hero = () => {
 
           {/* Right Banner Slider */}
           <div 
-            className="relative w-full overflow-hidden rounded-[28px] bg-[#d9ecff] h-[260px] sm:h-[340px] md:h-[430px] lg:h-[520px] xl:h-[660px]"
+            className="relative w-full overflow-hidden rounded-[28px] xl:rounded-none 2xl:rounded-[28px] bg-[#d9ecff] h-[220px] sm:h-[320px] md:h-[420px] lg:h-[520px] xl:h-auto xl:aspect-[1920/660] 2xl:h-[660px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >

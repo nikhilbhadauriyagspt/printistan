@@ -139,7 +139,6 @@ export default function Header() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Shop', path: '/shop' },
-    { name: 'Track Order', path: '/orders' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
     { name: 'FAQ', path: '/faq' },
@@ -150,12 +149,12 @@ export default function Header() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[1000] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
         Skip to content
       </a>
-      <header className="w-full bg-[#f3f3f3] font-poppins relative z-[120]">
+      <header className="w-full bg-[#f3f3f3] font-poppins sticky top-0 left-0 right-0 z-[120] shadow-sm">
         <div className="max-w-[1920px] mx-auto px-4 md:px-8 xl:px-12">
           {/* Top Row */}
-          <div className="h-[86px] flex items-center justify-between gap-6">
+          <div className="min-h-[60px] md:min-h-[86px] py-1 md:py-2 flex items-center justify-between gap-4 md:gap-6">
             {/* Logo */}
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center gap-2 md:gap-3 shrink-0">
               <button
                 onClick={() => setIsSidebarOpen(true)}
                 aria-label="Open Menu"
@@ -164,27 +163,27 @@ export default function Header() {
                 <Menu size={24} />
               </button>
 
-              <Link to="/" aria-label="Printistan Home" className="shrink-0 ml-4 flex items-center">
+              <Link to="/" aria-label="Printistan Home" className="shrink-0 ml-2 md:ml-4 flex items-center">
                 <span className="sr-only">Printistan Home</span>
                 <img
-                  src="/optimized/logo.png"
+                  src="/optimized/logo.avif"
                   alt="Printistan"
                   width={200}
                   height={44}
                   fetchPriority="high"
                   loading="eager"
-                  className="h-10 md:h-11 object-contain"
+                  className="h-8 md:h-10 lg:h-14 object-contain"
                 />
               </Link>            </div>
 
             {/* Nav */}
-            <nav className="hidden xl:flex ml-60 items-center gap-10">
+            <nav className="hidden xl:flex items-center gap-6 2xl:gap-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
                   className={cn(
-                    'text-[15px] font-semibold transition-colors relative',
+                    'text-[14px] 2xl:text-[15px] font-semibold transition-colors relative whitespace-nowrap',
                     location.pathname === link.path
                       ? 'text-blue-700'
                       : 'text-[#111111] hover:text-blue-700'
@@ -196,7 +195,7 @@ export default function Header() {
             </nav>
 
             {/* Right Actions */}
-            <div className="flex items-center mr-10 gap-4 md:gap-7 shrink-0">
+            <div className="flex items-center gap-3 md:gap-5 2xl:gap-7 shrink-0">
               <button
                 onClick={() => setIsMobileSearchOpen(true)}
                 aria-label="Open Search"
