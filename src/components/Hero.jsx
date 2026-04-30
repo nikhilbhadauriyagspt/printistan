@@ -122,6 +122,7 @@ const Hero = () => {
                   index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
               >
+                <span className="sr-only">{banner.alt}</span>
                 <img
                   src={banner.image}
                   alt={banner.alt}

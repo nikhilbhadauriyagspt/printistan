@@ -79,6 +79,7 @@ export default function ShopByCategory({ categories = [], loading = false }) {
                       alt={item.name}
                       width={120}
                       height={120}
+                      loading="lazy"
                       className="w-full  object-cover transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => {
                         e.target.src =

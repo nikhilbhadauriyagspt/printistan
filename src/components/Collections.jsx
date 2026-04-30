@@ -65,6 +65,9 @@ export default function Collections() {
                 <img 
                   src={item.image} 
                   alt={item.title} 
+                  width={600}
+                  height={280}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

@@ -112,11 +112,13 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div className="lg:col-span-2 pr-0 lg:pr-12">
             <Link to="/" aria-label="Printistan Home">
+              <span className="sr-only">Printistan Home</span>
               <img 
                 src="/logo/logo.png" 
                 alt="Printistan" 
                 width={200}
                 height={48}
+                loading="lazy"
                 className="h-10 md:h-12 mb-6 invert brightness-0" 
               />
             </Link>

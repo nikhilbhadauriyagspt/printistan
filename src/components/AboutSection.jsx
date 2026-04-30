@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 export default function AboutSection() {
   const points = [
-    { title: "Reliable Quality", desc: "We select only top-rated imaging devices and genuine supplies from globally recognized manufacturers.", icon: <Award className="text-blue-600" size={20} /> },
-    { title: "Expert Support", desc: "Our professional consultants are available around the clock to assist you in selecting the ideal documentation solution.", icon: <Users className="text-blue-600" size={20} /> },
-    { title: "Fast Logistics", desc: "Through our streamlined distribution network, we ensure your equipment arrives promptly and safely.", icon: <Zap className="text-blue-600" size={20} /> },
+    { title: "Reliable Quality", desc: "We choose only the best printers and genuine ink from brands you know and trust.", icon: <Award className="text-blue-600" size={20} /> },
+    { title: "Expert Support", desc: "Our skilled team is here 24/7 to assist you in finding the right printer for your needs.", icon: <Users className="text-blue-600" size={20} /> },
+    { title: "Fast Shipping", desc: "With our quick delivery system, we make sure your new gear arrives at your door on time.", icon: <Zap className="text-blue-600" size={20} /> },
   ];
 
   return (
@@ -29,7 +29,7 @@ export default function AboutSection() {
                 alt="High-performance imaging device"
                 width={800}
                 height={600}
-                loading="lazy"
+                loading="eager"
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
               />            </div>
             
@@ -54,15 +54,19 @@ export default function AboutSection() {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-[1.1] mb-8">
-              Advancing the Standard of <span className="text-blue-600">Professional Documentation.</span>
+              Better Printing for Your <span className="text-blue-600">Home and Office.</span>
             </h2>
             
             <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-6 leading-relaxed">
-              Printistan is your comprehensive resource for modern office technology. We provide tailored solutions that help you achieve superior clarity and efficiency.
+              Printistan is your trusted source for modern printers. We offer simple plans to make your work clear and fast.
             </h3>
 
+            <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-6">
+              We know that finding the right printer can be hard. That is why we focus on giving you the best tools for your home or office. Our team selects top-rated devices and genuine ink to ensure you get great results every time. Whether you need a simple desk printer or a large office machine, we are here to assist you in choosing the right fit.
+            </p>
+
             <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-10">
-              Our dedication goes beyond just providing equipment. We focus on delivering sustainable and high-efficiency systems that empower your daily operations. By integrating the latest advancements in imaging science, we ensure that every document you produce reflects the highest level of professionalism and precision.
+              Our commitment to you starts with quality. We only sell brands we trust, ensuring that your equipment lasts for years. We also provide expert support to make sure your setup runs smoothly. From setup advice to finding the right toner, our team is just a click away. At Printistan, we believe that great technology should be simple to use and easy to find. We offer fast shipping across the USA so you can get back to work quickly.
             </p>
 
             <div className="grid gap-6 mb-12">

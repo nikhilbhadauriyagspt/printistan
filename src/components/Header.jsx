@@ -162,11 +162,13 @@ export default function Header() {
               </button>
 
               <Link to="/" aria-label="Printistan Home" className="shrink-0 ml-4 flex items-center">
+                <span className="sr-only">Printistan Home</span>
                 <img
                   src="/optimized/logo.png"
                   alt="Printistan"
                   width={200}
                   height={44}
+                  fetchPriority="high"
                   className="h-10 md:h-11 object-contain"
                 />
               </Link>            </div>

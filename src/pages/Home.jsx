@@ -89,8 +89,8 @@ export default function Home() {
   return (
     <div className="bg-white font-jakarta overflow-x-hidden text-slate-900">
       <SEO 
-        title="Printistan | Professional Documentation & Imaging Solutions"
-        description="Discover our extensive range of high-performance office imaging tools and reliable accessories. We provide expert consulting and nationwide delivery for all your business documentation needs across the USA."
+        title="Printistan | Quality Printers and Ink Accessories"
+        description="Shop top-quality printers and ink at Printistan. We offer fast US shipping and expert support for your home and office. Quality printing made simple."
       />
 
       <Hero />
