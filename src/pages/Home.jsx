@@ -87,7 +87,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-white font-jakarta overflow-x-hidden text-slate-900">
+    <div id="main-content" className="bg-white font-jakarta overflow-x-hidden text-slate-900">
       <SEO 
         title="Printistan | Quality Printers and Ink Accessories"
         description="Shop top-quality printers and ink at Printistan. We offer fast US shipping and expert support for your home and office. Quality printing made simple."

@@ -147,6 +147,9 @@ export default function Header() {
 
   return (
     <>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[1000] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        Skip to content
+      </a>
       <header className="w-full bg-[#f3f3f3] font-poppins relative z-[120]">
         <div className="max-w-[1920px] mx-auto px-4 md:px-8 xl:px-12">
           {/* Top Row */}
@@ -169,6 +172,7 @@ export default function Header() {
                   width={200}
                   height={44}
                   fetchPriority="high"
+                  loading="eager"
                   className="h-10 md:h-11 object-contain"
                 />
               </Link>            </div>
@@ -327,9 +331,12 @@ export default function Header() {
 
                     {/* Search Input */}
                     <div className="relative flex-1 h-full">
+                      <label htmlFor="search-input" className="sr-only">Search products</label>
                       <input
+                        id="search-input"
                         type="text"
                         placeholder="Search"
+                        aria-label="Search for printers and accessories"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="w-full h-full bg-transparent px-6 pr-16 text-[16px] text-[#111111] outline-none placeholder:text-[#666]"

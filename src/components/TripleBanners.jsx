@@ -93,7 +93,7 @@ export default function TripleBanners() {
                   alt={item.title} 
                   width={300}
                   height={240}
-                  loading="lazy"
+                  loading={index === 0 ? "eager" : "lazy"}
                   className="max-w-full max-h-[85%] object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
               </div>

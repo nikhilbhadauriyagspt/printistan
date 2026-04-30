@@ -29,7 +29,7 @@ export default function AboutSection() {
                 alt="High-performance imaging device"
                 width={800}
                 height={600}
-                loading="eager"
+                loading="lazy"
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
               />            </div>
             
@@ -58,15 +58,19 @@ export default function AboutSection() {
             </h2>
             
             <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-6 leading-relaxed">
-              Printistan is your trusted source for modern printers. We offer simple plans to make your work clear and fast.
+              Reliable printing solutions for your home and office.
             </h3>
 
             <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-6">
-              We know that finding the right printer can be hard. That is why we focus on giving you the best tools for your home or office. Our team selects top-rated devices and genuine ink to ensure you get great results every time. Whether you need a simple desk printer or a large office machine, we are here to assist you in choosing the right fit.
+              Finding the right imaging device should be a simple process. At Printistan, we focus on providing high-quality hardware for every documentation need. Our team hand-picks top-rated machines and genuine supplies to ensure your work always looks its best. Whether you need a small desk unit or a robust system for a busy workplace, we have the tools to help you succeed.
+            </p>
+
+            <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-6">
+              We are dedicated to your satisfaction from the moment you browse our shop. Our catalog features trusted brands that stand for durability and performance. We don't just sell equipment; we offer a complete support experience. Our experts are ready to provide guidance on setup, maintenance, and finding the perfect ink or toner for your specific model.
             </p>
 
             <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-10">
-              Our commitment to you starts with quality. We only sell brands we trust, ensuring that your equipment lasts for years. We also provide expert support to make sure your setup runs smoothly. From setup advice to finding the right toner, our team is just a click away. At Printistan, we believe that great technology should be simple to use and easy to find. We offer fast shipping across the USA so you can get back to work quickly.
+              In today's fast-paced world, clear and efficient documentation is vital. That's why we prioritize speed and reliability in our shipping and service. We offer quick delivery across the USA, ensuring that your new technology arrives ready to work. By choosing us, you are investing in a partner committed to your long-term operational success and professional growth. We believe in making high-end technology accessible to everyone, regardless of their technical background.
             </p>
 
             <div className="grid gap-6 mb-12">
