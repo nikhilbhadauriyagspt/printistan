@@ -17,12 +17,18 @@ import {
   Wallet
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PayPalButtons } from "@paypal/react-paypal-js";
+import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import API_BASE_URL from '../config';
 import SEO from '@/components/SEO';
 import { cn } from '../lib/utils';
 
 export default function Checkout() {
+  const paypalOptions = {
+    "client-id": "Aa7mAnBKh44YCdokTrFjIP1wIB6mVVjrN8z-NZc_G2VLYJle_Xz9pMdOO7DRXx7zYT7Gh0dzbJUY9DDm",
+    currency: "USD",
+    intent: "capture"
+  };
+
   const { cart, clearCart } = useCart();
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
@@ -39,7 +45,7 @@ export default function Checkout() {
     city: '',
     zipCode: '',
     phone: '',
-    paymentMethod: 'paypal', 
+    paymentMethod: 'cod', 
   });
  
   useEffect(() => {
@@ -294,21 +300,23 @@ export default function Checkout() {
                   <div className="pt-4 space-y-6 flex flex-col items-center">
                     {formData.paymentMethod === 'paypal' ? (
                         <div className="relative z-10 w-full max-w-md mx-auto">
-                            <PayPalButtons 
-                                style={{ layout: "vertical", shape: "pill", label: "pay" }}
-                                createOrder={(data, actions) => {
-                                    return actions.order.create({
-                                        purchase_units: [{
-                                            amount: { value: total.toString() }
-                                        }]
-                                    });
-                                }}
-                                onApprove={(data, actions) => {
-                                    return actions.order.capture().then((details) => {
-                                        handleOrderSuccess(details);
-                                    });
-                                }}
-                            />
+                            <PayPalScriptProvider options={paypalOptions}>
+                                <PayPalButtons 
+                                    style={{ layout: "vertical", shape: "pill", label: "pay" }}
+                                    createOrder={(data, actions) => {
+                                        return actions.order.create({
+                                            purchase_units: [{
+                                                amount: { value: total.toString() }
+                                            }]
+                                        });
+                                    }}
+                                    onApprove={(data, actions) => {
+                                        return actions.order.capture().then((details) => {
+                                            handleOrderSuccess(details);
+                                        });
+                                    }}
+                                />
+                            </PayPalScriptProvider>
                         </div>
                     ) : (
                         <button type="submit" disabled={loading} className="w-full max-w-md h-14 bg-blue-600 text-white font-bold text-sm uppercase tracking-widest hover:bg-slate-900 transition-all flex items-center justify-center gap-3 disabled:opacity-50 active:scale-95 shadow-lg shadow-blue-100">

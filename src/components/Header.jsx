@@ -155,15 +155,21 @@ export default function Header() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={() => setIsSidebarOpen(true)}
+                aria-label="Open Menu"
                 className="xl:hidden p-2 rounded-lg hover:bg-black/5"
               >
                 <Menu size={24} />
               </button>
 
-              <Link to="/" className="shrink-0 ml-4 flex items-center">
-                <img src="/logo/logo.png" alt="Printistan" className="h-10 md:h-11 object-contain" />
-              </Link>
-            </div>
+              <Link to="/" aria-label="Printistan Home" className="shrink-0 ml-4 flex items-center">
+                <img
+                  src="/optimized/logo.png"
+                  alt="Printistan"
+                  width={200}
+                  height={44}
+                  className="h-10 md:h-11 object-contain"
+                />
+              </Link>            </div>
 
             {/* Nav */}
             <nav className="hidden xl:flex ml-60 items-center gap-10">
@@ -187,6 +193,7 @@ export default function Header() {
             <div className="flex items-center mr-10 gap-4 md:gap-7 shrink-0">
               <button
                 onClick={() => setIsMobileSearchOpen(true)}
+                aria-label="Open Search"
                 className="xl:hidden p-2 rounded-full hover:bg-black/5"
               >
                 <Search size={22} />
@@ -194,13 +201,14 @@ export default function Header() {
 
               <Link
                 to={user ? '/profile' : '/login'}
+                aria-label={user ? 'Go to Profile' : 'Sign In'}
                 className="flex items-center gap-3 group"
               >
                 <div className="w-11 h-11 rounded-full border border-black/15 flex items-center justify-center group-hover:border-[#13c3a3] group-hover:text-blue-700 transition-colors shrink-0">
                   <User size={22} />
                 </div>
                 <div className="hidden xl:flex flex-col -gap-1">
-                  <span className="text-[11px] text-gray-500 font-bold uppercase tracking-wider">
+                  <span className="text-[11px] text-gray-700 font-bold uppercase tracking-wider">
                     {user ? 'Profile' : 'Sign In'}
                   </span>
                   <span className="text-[14px] font-bold text-[#111] group-hover:text-blue-700 transition-colors">
@@ -211,6 +219,7 @@ export default function Header() {
 
               <Link
                 to="/wishlist"
+                aria-label={`View Wishlist (${wishlistCount} items)`}
                 className="flex items-center gap-3 group"
               >
                 <div className="relative w-11 h-11 rounded-full border border-black/15 flex items-center justify-center group-hover:border-[#13c3a3] group-hover:text-blue-700 transition-colors shrink-0">
@@ -222,13 +231,14 @@ export default function Header() {
                   )}
                 </div>
                 <div className="hidden xl:flex flex-col -gap-1">
-                  <span className="text-[11px] text-gray-500 font-bold uppercase tracking-wider">Favorite</span>
+                  <span className="text-[11px] text-gray-700 font-bold uppercase tracking-wider">Favorite</span>
                   <span className="text-[14px] font-bold text-[#111] group-hover:text-blue-700 transition-colors">Wishlist</span>
                 </div>
               </Link>
 
               <button
                 onClick={openCartDrawer}
+                aria-label={`Open Cart (${cartCount} items)`}
                 className="flex items-center gap-3 group"
               >
                 <div className="relative w-11 h-11 rounded-full border border-black/15 flex items-center justify-center group-hover:border-[#13c3a3] group-hover:text-blue-700 transition-colors shrink-0">
@@ -240,7 +250,7 @@ export default function Header() {
                   )}
                 </div>
                 <div className="hidden xl:flex flex-col -gap-1 text-left">
-                  <span className="text-[11px] text-gray-500 font-bold uppercase tracking-wider">Your Cart</span>
+                  <span className="text-[11px] text-gray-700 font-bold uppercase tracking-wider">Your Cart</span>
                   <span className="text-[14px] font-bold text-[#111] group-hover:text-blue-700 transition-colors">Checkout</span>
                 </div>
               </button>
@@ -376,6 +386,8 @@ export default function Header() {
                                     <img
                                       src={imageSrc}
                                       alt={p.name}
+                                      width={56}
+                                      height={56}
                                       className="max-h-full max-w-full object-contain"
                                     />
                                   ) : null}
@@ -426,7 +438,7 @@ export default function Header() {
             className="fixed inset-0 z-[1000] bg-[#111111]/95 backdrop-blur-md p-6"
           >
             <div className="flex justify-between items-center mb-10">
-              <img src="/logo/logo.png" alt="" className="h-8" />
+              <img src="/logo/logo.png" alt="" width={150} height={32} className="h-8" />
               <button onClick={() => setIsMobileSearchOpen(false)}>
                 <X size={30} className="text-white" />
               </button>
@@ -478,7 +490,13 @@ export default function Header() {
                         >
                           <div className="h-12 w-12 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden shrink-0">
                             {imageSrc && (
-                              <img src={imageSrc} alt="" className="max-h-full max-w-full object-contain" />
+                              <img 
+                                src={imageSrc} 
+                                alt="" 
+                                width={48}
+                                height={48}
+                                className="max-h-full max-w-full object-contain" 
+                              />
                             )}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -515,7 +533,7 @@ export default function Header() {
               className="fixed top-0 left-0 bottom-0 w-[310px] bg-white z-[210] flex flex-col shadow-2xl"
             >
               <div className="p-8 border-b border-gray-100 flex justify-between items-center">
-                <img src="/logo/logo.png" alt="" className="h-8" />
+                <img src="/logo/logo.png" alt="" width={150} height={32} className="h-8" />
                 <button onClick={() => setIsSidebarOpen(false)} className="p-2 bg-gray-50 rounded-lg">
                   <X size={22} />
                 </button>

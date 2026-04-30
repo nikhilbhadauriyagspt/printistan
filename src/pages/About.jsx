@@ -18,22 +18,22 @@ import aboutImg from '@/assets/bannerr/about1.png';
 const processCards = [
   {
     title: 'Safe Packaging',
-    desc: 'Each printer is packed carefully with proper protection so it reaches you safely.',
+    desc: 'Each unit is handled with extreme care and protective layering to ensure it reaches your workspace in perfect condition.',
     icon: <Shield size={18} />
   },
   {
     title: 'Quick Shipping',
-    desc: 'We work with reliable delivery partners to make sure your order reaches you on time.',
+    desc: 'We partner with leading logistical providers to guarantee that your documentation tools arrive on schedule.',
     icon: <Zap size={18} />
   },
   {
     title: 'Quality Checked',
-    desc: 'Every model is reviewed for performance and reliability before it is prepared.',
+    desc: 'Every model undergoes a rigorous performance review and reliability check before being cleared for dispatch.',
     icon: <CheckCircle2 size={18} />
   },
   {
-    title: 'Easy Setup',
-    desc: 'We share simple guidance and setup help so you can begin using your printer smoothly.',
+    title: 'Seamless Integration',
+    desc: 'We provide detailed orientation and setup assistance to help you integrate our solutions into your workflow effortlessly.',
     icon: <Users size={18} />
   },
 ];
@@ -41,26 +41,26 @@ const processCards = [
 const whyChooseUs = [
   {
     icon: Trophy,
-    title: 'Reliable Products',
-    desc: 'Dependable performance for both home and business use.',
+    title: 'Dependable Solutions',
+    desc: 'Ensuring consistent results for both residential and corporate environments.',
     color: 'text-blue-500'
   },
   {
     icon: Users,
-    title: 'Helpful Assistance',
-    desc: 'Our team is here to help you choose the right printer.',
+    title: 'Professional Insight',
+    desc: 'Our specialists are dedicated to helping you find the right fit for your needs.',
     color: 'text-blue-500'
   },
   {
     icon: Shield,
-    title: 'Trusted Shopping',
-    desc: 'A secure and smooth buying experience every time.',
+    title: 'Secure Procurement',
+    desc: 'Experience a protected and transparent purchasing journey from start to finish.',
     color: 'text-blue-500'
   },
   {
     icon: History,
-    title: 'Long-Term Value',
-    desc: 'Practical, efficient, and useful for everyday needs.',
+    title: 'Sustainable Value',
+    desc: 'Delivering practical and cost-effective tools for your long-term success.',
     color: 'text-blue-500'
   }
 ];
@@ -69,8 +69,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white text-[#333] font-poppins">
       <SEO
-        title="About Us | Printistan"
-        description="Learn about our commitment to providing reliable printing solutions for homes and businesses."
+        title="About Our Mission | Printistan - Your Documentation Partner"
+        description="Discover our commitment to providing high-performance imaging solutions and expert support for businesses and homes across the United States."
       />
 
       {/* --- MINIMAL HERO --- */}
@@ -82,25 +82,26 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               className="flex-1 text-center md:text-left"
             >
-              <span className="text-[11px] font-bold text-blue-600 tracking-[0.2em] uppercase mb-4 block">Our Story</span>
+              <span className="text-[11px] font-bold text-blue-600 tracking-[0.2em] uppercase mb-4 block">Our Journey</span>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-[#111] leading-tight mb-6">
-                Reliable Printing Solutions for <span className="text-blue-600 font-light italic">Everyday Life.</span>
+                Reliable Imaging Solutions for <span className="text-blue-600 font-light italic">Modern Workspaces.</span>
               </h1>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-700 mb-6">Empowering Your Daily Operations with Precision.</h3>
               <p className="text-[16px] md:text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto md:mx-0 mb-10 font-light">
-                We make it easier for homes and businesses to find dependable printers, useful accessories, and simple support in one place.
+                At Printistan, we simplify the process of finding dependable equipment and high-quality supplies. Our goal is to provide comprehensive support and efficient tools that allow you to focus on what matters most—your work.
               </p>
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-5">
                 <Link
                   to="/shop"
                   className="px-8 py-3.5 bg-[#111] text-white text-[14px] font-medium rounded-lg hover:bg-blue-600 transition-all flex items-center gap-2 group"
                 >
-                  Explore Shop <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  Explore Catalog <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/contact"
                   className="px-8 py-3.5 border border-gray-200 text-[#111] text-[14px] font-medium rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all"
                 >
-                  Contact Us
+                  Get in Touch
                 </Link>
               </div>
             </motion.div>
@@ -110,7 +111,7 @@ const About = () => {
               transition={{ delay: 0.2 }}
               className="flex-1 flex justify-center md:justify-end"
             >
-              <img src={aboutImg} alt="Hardware" className="w-full max-w-md lg:max-w-xl h-auto object-contain mix-blend-multiply opacity-90" />
+              <img src={aboutImg} alt="Professional office equipment" className="w-full max-w-md lg:max-w-xl h-auto object-contain mix-blend-multiply opacity-90" />
             </motion.div>
           </div>
         </div>
@@ -125,7 +126,7 @@ const About = () => {
                 <div className="mb-6 inline-block md:block">
                    <item.icon size={26} className={item.color} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-[18px] font-semibold text-[#111] mb-3">{item.title}</h3>
+                <h4 className="text-[18px] font-semibold text-[#111] mb-3">{item.title}</h4>
                 <p className="text-[14px] text-gray-400 font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -140,19 +141,19 @@ const About = () => {
             <div>
               <div className="flex items-center gap-3 mb-6">
                  <Target size={20} className="text-blue-600" />
-                 <h3 className="text-xl font-semibold text-[#111]">Our Mission</h3>
+                 <h3 className="text-xl font-semibold text-[#111]">Our Dedicated Mission</h3>
               </div>
               <p className="text-[15px] md:text-[16px] text-gray-500 font-light leading-relaxed">
-                Our mission is to provide dependable printers, useful accessories, and straightforward guidance that help customers print with confidence and convenience.
+                We are committed to delivering stable documentation platforms and intuitive support that enable our clients to operate with total confidence and streamlined convenience.
               </p>
             </div>
             <div>
               <div className="flex items-center gap-3 mb-6">
                  <Layers3 size={20} className="text-blue-600" />
-                 <h3 className="text-xl font-semibold text-[#111]">Our Vision</h3>
+                 <h3 className="text-xl font-semibold text-[#111]">Our Forward Vision</h3>
               </div>
               <p className="text-[15px] md:text-[16px] text-gray-500 font-light leading-relaxed">
-                Our vision is to become a trusted destination for modern printing needs by offering practical products, reliable service, and a better overall customer experience.
+                We aim to be the premier destination for modern imaging requirements by offering effective products, steadfast service, and a superior customer experience.
               </p>
             </div>
           </div>
@@ -162,7 +163,7 @@ const About = () => {
       {/* --- PROCESS STEPS --- */}
       <section className="py-24 md:py-32">
         <div className="max-w-[1920px] mx-auto px-4 md:px-10 lg:px-16">
-          <h2 className="text-center text-3xl font-semibold mb-20">How We Work</h2>
+          <h2 className="text-center text-3xl font-semibold mb-20">How We Ensure Success</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {processCards.map((item, idx) => (
               <div key={idx} className="p-8 border border-gray-100 rounded-2xl hover:border-blue-100 transition-colors bg-white shadow-sm">

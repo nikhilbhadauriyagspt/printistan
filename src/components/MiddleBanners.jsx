@@ -16,7 +16,13 @@ export const MiddleBannerOne = () => (
         viewport={{ once: true }}
         className="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-[3rem] border border-gray-100 shadow-sm group"
       >
-        <img src={mid1} alt="Promo" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+        <img 
+          src={mid1} 
+          alt="Promo" 
+          width={1200}
+          height={500}
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+        />
         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500" />
         
         <div className="absolute inset-0 flex flex-col justify-center items-start px-12 md:px-20">
@@ -49,7 +55,13 @@ export const MiddleBannerTwo = () => (
         viewport={{ once: true }}
         className="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-[3rem] border border-gray-100 shadow-sm group"
       >
-        <img src={mid2} alt="Promo" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+        <img 
+          src={mid2} 
+          alt="Promo" 
+          width={1200}
+          height={500}
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+        />
         
         <div className="absolute inset-0 flex flex-col justify-center items-end px-12 md:px-20 text-right">
            <motion.div 
@@ -83,7 +95,13 @@ export const MiddleBannerThree = () => (
         viewport={{ once: true }}
         className="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-[3rem] border border-gray-100 shadow-sm group"
       >
-        <img src={mid3} alt="Promo" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+        <img 
+          src={mid3} 
+          alt="Promo" 
+          width={1200}
+          height={500}
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         
         <div className="absolute bottom-12 left-12 right-12 flex justify-between items-end">

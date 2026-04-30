@@ -41,6 +41,8 @@ export default function PromoBanner() {
             <img
               src={promoImg}
               alt="Promo"
+              width={600}
+              height={320}
               className="h-[105%] w-auto object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
             />
           </div>

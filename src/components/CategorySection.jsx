@@ -66,6 +66,8 @@ export default function CategorySection({ title, subtitle, categoryKeyword, bgCo
                 <img 
                   src={getImagePath(p.images)} 
                   alt={p.name}
+                  width={400}
+                  height={400}
                   className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute bottom-2 left-2 right-2 translate-y-[120%] group-hover:translate-y-0 transition-transform duration-300">

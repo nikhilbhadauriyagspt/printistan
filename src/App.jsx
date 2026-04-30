@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
@@ -48,15 +47,8 @@ const ShopLayout = ({ children }) => (
 );
 
 function App() {
-  const paypalOptions = {
-    "client-id": "Aa7mAnBKh44YCdokTrFjIP1wIB6mVVjrN8z-NZc_G2VLYJle_Xz9pMdOO7DRXx7zYT7Gh0dzbJUY9DDm",
-    currency: "USD",
-    intent: "capture"
-  };
-
   return (
     <CartProvider>
-      <PayPalScriptProvider options={paypalOptions}>
                     <Router>
                       <ScrollToTop />
                       <Toast />                <CartDrawer />
@@ -102,7 +94,6 @@ function App() {
         </Route>
                       </Routes>
                       </Router>
-                    </PayPalScriptProvider>
                   </CartProvider>
                 );
               }export default App;

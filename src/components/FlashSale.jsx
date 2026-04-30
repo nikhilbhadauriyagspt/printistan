@@ -82,6 +82,8 @@ export default function FlashSale({ products: deals = [] }) {
                 <img 
                   src={getImagePath(deal.images)} 
                   alt={deal.name} 
+                  width={400}
+                  height={300}
                   className="w-full h-auto max-h-[300px] object-contain transition-transform duration-700 group-hover:scale-110" 
                 />
               </div>

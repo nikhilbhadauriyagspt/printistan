@@ -271,6 +271,8 @@ export default function Shop() {
                           <img
                             src={getImagePath(p.images)}
                             alt={p.name}
+                            width={400}
+                            height={400}
                             className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out"
                             onError={(e) => { e.target.src = 'https://via.placeholder.com/400x400?text=' + encodeURIComponent(p.name); }}
                           />

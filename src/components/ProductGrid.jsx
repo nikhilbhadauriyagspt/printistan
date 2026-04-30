@@ -71,6 +71,9 @@ export default function ProductGrid({ products = [], loading = false }) {
                     <img 
                       src={getImagePath(p.images)} 
                       alt={p.name} 
+                      loading="lazy"
+                      width={400}
+                      height={400}
                       className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out"
                       onError={(e) => { e.target.src = "https://via.placeholder.com/400x400?text=" + p.name; }}
                     />
@@ -78,7 +81,7 @@ export default function ProductGrid({ products = [], loading = false }) {
                   
                   {/* Quick Action Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/5 backdrop-blur-[2px] pointer-events-none group-hover:pointer-events-auto">
-                    <Link to={`/product/${p.slug}`} className="h-8 w-8 rounded-lg bg-white text-[#1A1A1A] flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-lg active:scale-90">
+                    <Link to={`/product/${p.slug}`} aria-label={`View details of ${p.name}`} className="h-8 w-8 rounded-lg bg-white text-[#1A1A1A] flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-lg active:scale-90">
                        <Eye size={14} />
                     </Link>
                     <button 
@@ -86,6 +89,7 @@ export default function ProductGrid({ products = [], loading = false }) {
                         e.preventDefault();
                         toggleWishlist(p);
                       }}
+                      aria-label={isInWishlist(p.id) ? `Remove ${p.name} from wishlist` : `Add ${p.name} to wishlist`}
                       className="h-8 w-8 rounded-lg bg-white text-[#1A1A1A] flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-xl active:scale-90"
                     >
                        <Heart size={14} className={isInWishlist(p.id) ? "fill-red-500 text-red-500" : ""} />
@@ -96,9 +100,9 @@ export default function ProductGrid({ products = [], loading = false }) {
                 {/* Info Section */}
                 <div className="flex flex-col flex-1 px-1">
                   <Link to={`/product/${p.slug}`} className="block mb-2 flex-1">
-                    <h4 className="font-bold text-[#1A1A1A] text-[13px] group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
+                    <h3 className="font-bold text-[#1A1A1A] text-[13px] group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
                       {p.name}
-                    </h4>
+                    </h3>
                   </Link>
                   
                   <div className="flex items-center justify-between mt-auto">
@@ -106,6 +110,7 @@ export default function ProductGrid({ products = [], loading = false }) {
                     
                     <button 
                       onClick={(e) => handleAddToCart(e, p)}
+                      aria-label={`Add ${p.name} to cart`}
                       className="h-9 w-9 rounded-xl bg-[#1A1A1A] text-white flex items-center justify-center hover:bg-blue-600 transition-all group/cart active:scale-90"
                     >
                       <ShoppingCart size={16} strokeWidth={2.5} />

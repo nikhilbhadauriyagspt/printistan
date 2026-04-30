@@ -3,15 +3,10 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import API_BASE_URL from '../config';
 
-// Assets
-import banner1 from '../assets/bannerr/ban2.png';
-import banner2 from '../assets/bannerr/newban2.png';
-import banner3 from '../assets/bannerr/ban1.png';
-
 const banners = [
-  { id: 1, image: banner1, alt: "Premium Printers" },
-  { id: 2, image: banner2, alt: "Latest Printer Models" },
-  { id: 3, image: banner3, alt: "Printer Accessories" }
+  { id: 1, image: "/optimized/hero-main.avif", alt: "Premium Printers" },
+  { id: 2, image: "/optimized/hero-slide2.avif", alt: "Latest Printer Models" },
+  { id: 3, image: "/optimized/hero-slide3.avif", alt: "Printer Accessories" }
 ];
 
 const Hero = () => {
@@ -96,6 +91,8 @@ const Hero = () => {
                       <img 
                         src={cat.icon} 
                         alt={cat.name} 
+                        width={40}
+                        height={40}
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           e.target.src = 'https://via.placeholder.com/40x40?text=P';
@@ -128,6 +125,10 @@ const Hero = () => {
                 <img
                   src={banner.image}
                   alt={banner.alt}
+                  width={1920}
+                  height={660}
+                  fetchPriority={index === 0 ? "high" : undefined}
+                  loading={index === 0 ? "eager" : "lazy"}
                   className="w-full h-full object-cover object-center"
                 />
               </Link>
@@ -137,6 +138,7 @@ const Hero = () => {
             <button
               onClick={(e) => { e.preventDefault(); prevSlide(); }}
               type="button"
+              aria-label="Previous Slide"
               className={`absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/90 hover:bg-white text-[#1a1a1a] flex items-center justify-center shadow-lg z-20 transition-all duration-300 ${
                 isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
               }`}
@@ -147,6 +149,7 @@ const Hero = () => {
             <button
               onClick={(e) => { e.preventDefault(); nextSlide(); }}
               type="button"
+              aria-label="Next Slide"
               className={`absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/90 hover:bg-white text-[#1a1a1a] flex items-center justify-center shadow-lg z-20 transition-all duration-300 ${
                 isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
               }`}
@@ -160,6 +163,7 @@ const Hero = () => {
                 <button
                   key={index}
                   onClick={(e) => { e.preventDefault(); setCurrentSlide(index); }}
+                  aria-label={`Go to slide ${index + 1}`}
                   className={`transition-all duration-300 rounded-full ${
                     index === currentSlide ? 'w-6 h-2.5 bg-white' : 'w-2.5 h-2.5 bg-white/50 hover:bg-white/70'
                   }`}

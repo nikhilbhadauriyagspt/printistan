@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 export default function AboutSection() {
   const points = [
-    { title: "Reliable Quality", desc: "We source only the highest-rated printers and genuine accessories from world-class brands.", icon: <Award className="text-blue-600" size={20} /> },
-    { title: "Expert Support", desc: "Our team of  experts is available 24/7 to help you choose and set up your perfect printing solution.", icon: <Users className="text-blue-600" size={20} /> },
-    { title: "Fast Logistics", desc: "With our optimized supply chain, we ensure your orders reach you faster than anyone else in the industry.", icon: <Zap className="text-blue-600" size={20} /> },
+    { title: "Reliable Quality", desc: "We select only top-rated imaging devices and genuine supplies from globally recognized manufacturers.", icon: <Award className="text-blue-600" size={20} /> },
+    { title: "Expert Support", desc: "Our professional consultants are available around the clock to assist you in selecting the ideal documentation solution.", icon: <Users className="text-blue-600" size={20} /> },
+    { title: "Fast Logistics", desc: "Through our streamlined distribution network, we ensure your equipment arrives promptly and safely.", icon: <Zap className="text-blue-600" size={20} /> },
   ];
 
   return (
@@ -24,12 +24,14 @@ export default function AboutSection() {
             className="w-full lg:w-1/2 relative"
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.1)] border-8 border-white">
-              <img 
-                src="/category/all-in-one-printers.jpg" 
-                alt="Premium Printer" 
+              <img
+                src="/category/all-in-one-printers.jpg"
+                alt="High-performance imaging device"
+                width={800}
+                height={600}
+                loading="lazy"
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
+              />            </div>
             
             {/* Decorative Elements */}
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-50 rounded-full -z-0 blur-3xl opacity-60" />
@@ -48,17 +50,19 @@ export default function AboutSection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-blue-600 text-[13px] font-bold mb-6">
               <span className="h-2 w-2 bg-blue-600 rounded-full animate-pulse" />
-              Discover Our Story
+              Our Commitment to Excellence
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-[1.1] mb-8">
-              Redefining the Future of <span className="text-blue-600">Professional Printing.</span>
+              Advancing the Standard of <span className="text-blue-600">Professional Documentation.</span>
             </h2>
             
+            <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-6 leading-relaxed">
+              Printistan is your comprehensive resource for modern office technology. We provide tailored solutions that help you achieve superior clarity and efficiency.
+            </h3>
+
             <p className="text-[16px] text-gray-600 font-medium leading-relaxed mb-10">
-              Welcome to Printistan, your premier destination for cutting-edge printing technology. 
-              We don't just sell printers; we provide comprehensive solutions that empower businesses and 
-              individuals to bring their visions to life with unmatched clarity and precision.
+              Our dedication goes beyond just providing equipment. We focus on delivering sustainable and high-efficiency systems that empower your daily operations. By integrating the latest advancements in imaging science, we ensure that every document you produce reflects the highest level of professionalism and precision.
             </p>
 
             <div className="grid gap-6 mb-12">
@@ -79,7 +83,7 @@ export default function AboutSection() {
               to="/about" 
               className="inline-flex items-center gap-3 bg-[#1A1A1A] hover:bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 group shadow-xl shadow-gray-200"
             >
-              Learn More About Us
+              Explore Our Vision
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </Link>
           </motion.div>

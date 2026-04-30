@@ -149,6 +149,8 @@ export default function ProductDetail() {
                 transition={{ duration: 0.3 }}
                 src={mainImage}
                 alt={product.name}
+                width={600}
+                height={600}
                 className="max-h-[72%] max-w-[72%] object-contain transition-transform duration-700 group-hover:scale-105"
               />
 
@@ -183,7 +185,13 @@ export default function ProductDetail() {
                         : 'border-slate-100 hover:border-slate-200'
                     )}
                   >
-                    <img src={img} alt="" className="max-h-full max-w-full object-contain" />
+                    <img 
+                      src={img} 
+                      alt="" 
+                      width={80}
+                      height={80}
+                      className="max-h-full max-w-full object-contain" 
+                    />
                   </button>
                 ))}
               </div>
@@ -312,6 +320,8 @@ export default function ProductDetail() {
                     <Link to={`/product/${p.slug}`} className="absolute inset-0 z-10" />
                     <img
                       src={getImagePath(p.images)}
+                      width={300}
+                      height={300}
                       className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                       alt={p.name}
                     />

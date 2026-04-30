@@ -77,6 +77,8 @@ export default function ShopByCategory({ categories = [], loading = false }) {
                     <img
                       src={getImagePath(item.image)}
                       alt={item.name}
+                      width={120}
+                      height={120}
                       className="w-full  object-cover transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => {
                         e.target.src =

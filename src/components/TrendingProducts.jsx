@@ -76,6 +76,8 @@ export default function TrendingProducts() {
                 <div className="absolute inset-0 p-10 flex items-center justify-center">
                   <img 
                     src={p.image} 
+                    width={400}
+                    height={400}
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out" 
                     alt={p.name} 
                     onError={(e) => { e.target.src = "https://via.placeholder.com/400x400?text=" + p.name; }}

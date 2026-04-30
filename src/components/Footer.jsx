@@ -81,7 +81,7 @@ export default function Footer() {
           <div className="max-w-xl text-center lg:text-left">
            
             <h3 className="text-3xl md:text-4xl  text-white  mb-3">Join Our Newsletter</h3>
-            <p className="text-gray-400 text-[14px] font-medium leading-relaxed">
+            <p className="text-gray-300 text-[14px] font-medium leading-relaxed">
               Subscribe to get the latest updates on printing technology and exclusive offers.
             </p>
           </div>
@@ -92,11 +92,13 @@ export default function Footer() {
               <input
                 required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
+                aria-label="Email Address for Newsletter"
                 className="w-full bg-transparent py-3 text-[14px] font-medium text-white outline-none placeholder:text-gray-500"
               />
             </div>
             <button
               disabled={loading}
+              aria-label="Subscribe to Newsletter"
               className="w-full sm:w-auto bg-blue-600 text-white px-8 py-3.5 rounded-xl text-[14px] font-bold hover:bg-white hover:text-[#1A1A1A] transition-all active:scale-95 flex items-center justify-center gap-2"
             >
               {loading ? <Loader2 className="animate-spin" size={18} /> : "Subscribe"}
@@ -109,10 +111,16 @@ export default function Footer() {
           
           {/* Column 1: Brand */}
           <div className="lg:col-span-2 pr-0 lg:pr-12">
-            <Link to="/">
-              <img src="/logo/logo.png" alt="Printistan" className="h-10 md:h-12 mb-6 invert brightness-0" />
+            <Link to="/" aria-label="Printistan Home">
+              <img 
+                src="/logo/logo.png" 
+                alt="Printistan" 
+                width={200}
+                height={48}
+                className="h-10 md:h-12 mb-6 invert brightness-0" 
+              />
             </Link>
-            <p className="text-gray-400 max-w-sm text-[14px] leading-relaxed font-medium mb-8">
+            <p className="text-gray-300 max-w-sm text-[14px] leading-relaxed font-medium mb-8">
               Your trusted partner for high-quality printers, inks, and accessories. 
               We are dedicated to providing the best printing solutions with uncompromising support.
             </p>
@@ -159,7 +167,7 @@ export default function Footer() {
                       <Mail size={18} />
                     </div>
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500 mb-0.5">Email Support</p>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-0.5">Email Support</p>
                       <p className="text-[14px] font-bold text-white">info@printistan.shop</p>
                     </div>
                  </a>
@@ -170,7 +178,7 @@ export default function Footer() {
                       <MapPin size={18} />
                     </div>
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500 mb-0.5">Location</p>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-0.5">Location</p>
                       <p className="text-[13px] font-medium text-white leading-snug">
                         3001 27th St N, Birmingham, AL 35207, USA
                       </p>
@@ -185,25 +193,24 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-6">
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6">
             {legalLinks.map((link) => (
-               <Link key={link.name} to={link.path} className="text-gray-500 hover:text-white text-[12px] font-bold transition-colors">
+               <Link key={link.name} to={link.path} className="text-gray-400 hover:text-white text-[12px] font-bold transition-colors">
                  {link.name}
                </Link>
             ))}
           </div>
           
           <div className="flex items-center gap-4">
-            <span className="text-[12px] font-bold text-gray-500">Secure Payments via</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-5 opacity-80 hover:opacity-100 transition-opacity" />
-          </div>
-        </div>
+            <span className="text-[12px] font-bold text-gray-400">Secure Payments via</span>
+            <span className="text-white font-bold text-[14px]">PayPal</span>
+          </div>        </div>
 
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-           <p className="text-[13px] font-medium text-gray-500">
+           <p className="text-[13px] font-medium text-gray-400">
              © {new Date().getFullYear()} Printistan. All rights reserved.
            </p>
            
            {/* DISCLAIMER */}
-           <p className="text-gray-600 text-[10px] font-bold uppercase tracking-widest text-center md:text-right max-w-xl">
+           <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest text-center md:text-right max-w-xl">
              Disclaimer - For Informational only. No software installation or distribution.
            </p>
         </div>
